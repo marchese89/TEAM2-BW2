@@ -1,0 +1,159 @@
+$light: #fbfbfb;
+$dark1: #202020;
+$dark2: #131313;
+$dark3: #0a0a0a;
+$dark4: #0e0e0e;
+$dark5: #222222;
+$dark6: #2c2c2c;
+$green: #1ed760;
+$over: #282828;
+
+body {
+  background-color: $dark1;
+  font-family: "Circular";
+}
+
+#avatar {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+#provacolore {
+  background: rgb(32, 32, 32);
+  background: linear-gradient(
+    0deg,
+    rgba(32, 32, 32, 1) -20%,
+    rgba(192, 171, 70, 1) 120%
+  );
+}
+// nav {
+//   background-color: rgb(192 171 70);
+// }
+#btn-avatar {
+  font-size: 14px;
+  vertical-align: middle;
+  font-weight: 600;
+  background-color: $dark1;
+  opacity: 0.8;
+  color: white;
+  width: 180px;
+  padding: 0.1rem 10rem 0.1rem 0.1rem;
+  border: 0;
+}
+
+#arr-left {
+  background-color: $dark1;
+  border-radius: 50%;
+  opacity: 0.8;
+  padding: 0.2rem;
+  padding-right: 0.4rem;
+  font-size: 23px;
+}
+#arr-right {
+  background-color: $dark1;
+  border-radius: 50%;
+  opacity: 0.8;
+  padding: 0.2rem;
+  padding-left: 0.4rem;
+  font-size: 23px;
+}
+
+#album-description p,
+h1 {
+  color: white;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+#artistImg {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+#cover-img img {
+  transition: transform 0.3s;
+}
+#cover-img:hover img {
+  transform: scale(1.02);
+}
+#cover-img {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+#album-description p {
+  margin-bottom: 0.5rem;
+}
+#album-description {
+  position: relative;
+}
+#divArtist {
+  position: absolute;
+  bottom: 0;
+}
+#divArtist p {
+  margin-bottom: 0;
+}
+// #album {
+//   background: rgb(32, 32, 32);
+//   background: linear-gradient(
+//     0deg,
+//     rgba(32, 32, 32, 1) -20%,
+//     rgba(192, 171, 70, 1) 120%
+//   );
+// }
+#duration,
+#trackList {
+  color: rgb(169, 169, 169);
+  opacity: 0.7;
+}
+
+#playGreen {
+  font-size: 60px;
+  color: $green;
+  transition: transform 0.3s;
+  margin-right: 1rem;
+  border: 0;
+}
+#playGreen:hover {
+  transform: scale(1.1);
+}
+
+#likeHeart,
+#downloadIcon,
+#dotsDrop {
+  font-size: 40px;
+  color: rgb(170, 168, 168);
+  transition: transform 0.3s;
+  border: 0;
+}
+#likeHeart:hover,
+#downloadIcon:hover,
+#dotsDrop:hover {
+  transform: scale(1.1);
+}
+
+#songList {
+  background: rgb(192, 171, 70);
+  background: linear-gradient(
+    180deg,
+    rgb(192, 171, 70) -60%,
+    rgb(32, 32, 32) 17%
+  );
+  border-top: 1px solid rgb(32, 32, 32);
+}
+#trackList {
+  padding: 1rem 2.5rem;
+}
+#trackList .primaR {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.2);
+  padding-bottom: 0.6rem;
+}
+#trackList .row {
+  padding-top: 0.6rem;
+}
+#trackList p {
+  margin: 0;
+}

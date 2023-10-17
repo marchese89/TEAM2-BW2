@@ -5,12 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spotify-clone</title>
     <link rel="stylesheet" href="assets/css/sass/style.css" />
+    <link rel="stylesheet" href="assets/css/circular-font.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row align-items-center mt-2">
         <div id="left-side-bar" class="col col-3"></div>
-        <div id="center-bar" class="col col-7"></div>
+        <div id="center-bar" class="col col-7 p-0">
+          <!--BARRA SUPERIORE-->
+          <div id="provacolore">
+            <nav class="d-flex align-items-center pb-2">
+              <div
+                class="d-flex flex-row align-items-center text-decoration-none ms-3 me-auto mb-lg-0"
+              >
+                <span class="">
+                  <a class="btn p-0 m-2" href="#">
+                    <i class="bi bi-chevron-left text-white" id="arr-left"></i>
+                  </a>
+                </span>
+                <span class="">
+                  <a class="btn p-0 m-1" href="#">
+                    <i
+                      class="bi bi-chevron-right text-white"
+                      id="arr-right"
+                    ></i>
+                  </a>
+                </span>
+              </div>
+              <div class="dropdown me-3">
+                <button
+                  class="btn rounded-pill dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="btn-avatar"
+                >
+                  <img id="avatar" src="assets/imgs/avatar.png" />
+                  Lidia Nautilus ...
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Account</a
+                      >
+                    </li>
+                    <li class="col-2">
+                      <i class="bi-box-arrow-up-right text-white"></i>
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Profilo</a
+                      >
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Assistenza</a
+                      >
+                    </li>
+                    <li class="col-2">
+                      <i class="bi-box-arrow-up-right text-white"></i>
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Download</a
+                      >
+                    </li>
+                    <li class="col-2">
+                      <i class="bi-box-arrow-up-right text-white"></i>
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Impostazioni</a
+                      >
+                    </li>
+                  </div>
+
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item text-white" href="#">Esci</a></li>
+                </ul>
+              </div>
+            </nav>
+            <!--BARRA SUPERIORE-->
+            <div id="album">
+              <div class="container-fluid p-4">
+                <div class="d-flex align-items-end" id="div-Album">
+                  <div class="p-0" id="cover-img"></div>
+                  <div class="p-0 ms-4" id="album-description">
+                    <div
+                      class="d-flex flex-row align-items-end"
+                      id="divArtist"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--FINE BARRA SUPERIORE-->
+          </div>
+          <div class="container-fluid" id="songList">
+            <!--INIZIO BARRA PLAY-->
+            <div class="d-flex" id="buttonDiv">
+              <button type="button" class="btn" id="playGreen">
+                <i class="bi bi-play-circle-fill"></i>
+              </button>
+              <button type="button" class="btn" id="likeHeart">
+                <i class="bi bi-heart"></i>
+              </button>
+              <button type="button" class="btn" id="downloadIcon">
+                <i class="bi bi-arrow-down-circle"></i>
+              </button>
+              <div class="dropdown align-self-center">
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="dropdown"
+                  id="dotsDrop"
+                >
+                  <i class="bi bi-three-dots"></i>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Aggiungi a La tua libreria</a
+                      >
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Aggiungi in coda</a
+                      >
+                    </li>
+                  </div>
+                  <div class="dropdown-item d-flex justify-content-between">
+                    <li class="col-10">
+                      <a class="text-white text-decoration-none" href="#"
+                        >Vai a Radio dell'artista</a
+                      >
+                    </li>
+                  </div>
+
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-white" href="#"
+                      >Aggiungi alla playlist</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item text-white" href="#">Condividi</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--FINE BARRA PLAY-->
+            <div class="container-fluid" id="trackList">
+              <div class="row primaR">
+                <div class="col-auto text-start">#</div>
+                <div class="col-6">TITOLO</div>
+                <div class="col-2 me-auto text-end">
+                  <p>RIPRODUZIONI</p>
+                </div>
+                <div class="col-auto"><i class="bi bi-clock"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div id="right-side-bar" class="col col-2"></div>
         <div class="container">
           <div class="row">
@@ -19,6 +193,7 @@
         </div>
       </div>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
