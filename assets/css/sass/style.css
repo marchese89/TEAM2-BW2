@@ -167,6 +167,11 @@ body {
 }
 .big-banner img {
   border-radius: 5px;
+  height: 12em;
+}
+
+.card.big-banner {
+  height: 25rem;
 }
 
 .col {
@@ -204,6 +209,10 @@ body {
 
 .player-center-top i {
   margin-right: 1.2em;
+}
+
+.album-img {
+  height: 100px;
 }
 
 body {
