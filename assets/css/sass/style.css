@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "../../circular-font.css";
+@import "../circular-font.css";
 body {
   background-color: #202020;
 }
