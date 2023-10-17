@@ -196,11 +196,12 @@ body {
 #player {
   background-color: $dark_player;
   position: fixed;
-  height: 5rem;
+  height: 6rem;
   bottom: 0;
 }
 
 .player-left {
+  width: 25%;
   h6 {
     font-size: 0.8em;
     font-weight: bold;
@@ -218,6 +219,7 @@ body {
 
 .player-center {
   color: white;
+  width: 50%;
 }
 
 .player-center-top i {
@@ -226,4 +228,40 @@ body {
 
 .album-img {
   height: 100px;
+}
+
+.progr-bar {
+  margin-top: 0.5em;
+  width: 25rem;
+}
+.player-right {
+  display: flex;
+  justify-content: end;
+  width: 25%;
+  text-align: end;
+  i {
+    margin-right: 1.2em;
+    font-size: 1.2em;
+  }
+}
+
+#bar2 {
+  width: 4em;
+  margin-right: 1em;
+  margin-left: -1em;
+  position: relative;
+  top: 0.6em;
+}
+.bi-shuffle {
+  margin-top: 0.6em;
+}
+.fa-step-backward,
+.fa-step-forward,
+.fa-undo-alt {
+  margin-top: 0.7em;
+}
+.bi-play-circle-fill {
+  font-size: 1.8em;
+  margin-right: 0.5em !important;
+  // margin-top: 0.3em;
 }
