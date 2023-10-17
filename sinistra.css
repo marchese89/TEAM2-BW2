@@ -1,0 +1,17 @@
+#aside-left {
+  background-color: black;
+  color: white;
+}
+#aside-left I {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+}
+#aside-left p {
+  margin-bottom: 0px;
+}
+
+#playlist {
+  height: 65vh;
+  overflow: auto;
+}/*# sourceMappingURL=sinistra.css.map */
