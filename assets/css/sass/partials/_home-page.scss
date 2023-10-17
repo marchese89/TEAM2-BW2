@@ -5,6 +5,7 @@ $dark3: #0a0a0a;
 $dark4: #0e0e0e;
 $dark5: #222222;
 $dark6: #2c2c2c;
+$dark_player: #181818;
 $green: #1ed760;
 $over: #282828;
 
@@ -70,7 +71,7 @@ body {
 
 #center-bar {
   width: 100%;
-  //   overflow: auto;
+  margin-bottom: 5rem;
 }
 
 #main {
@@ -186,4 +187,35 @@ body {
   img {
     width: 15rem;
   }
+}
+
+#player {
+  background-color: $dark_player;
+  position: fixed;
+  height: 5rem;
+  bottom: 0;
+}
+
+.player-left {
+  h6 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  p {
+    font-size: 0.7em;
+    margin-bottom: 0;
+  }
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.player-center {
+  color: white;
+}
+
+.player-center-top i {
+  margin-right: 1.2em;
 }
