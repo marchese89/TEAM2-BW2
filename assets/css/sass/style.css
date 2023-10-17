@@ -206,6 +206,14 @@ body {
   margin-right: 1.2em;
 }
 
+.fs-7 {
+  font-size: 0.8em;
+}
+
+.play-button {
+  font-size: 40px;
+}
+
 body {
   font-family: "Circular", Times, serif !important;
 }
