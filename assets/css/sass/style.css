@@ -1,4 +1,267 @@
 @charset "UTF-8";
+@import "../circular-font.css";
+body {
+  background-color: #202020;
+}
+
+#avatar {
+  background-color: #0a0a0a;
+  border-radius: 15px;
+}
+#avatar i {
+  color: #fbfbfb;
+  padding-right: 0.5em;
+  margin-left: 0.5em;
+}
+#avatar img {
+  width: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  padding: 0.2em;
+}
+
+#top {
+  justify-content: center;
+  align-items: center;
+}
+
+#arr-left i {
+  font-size: 2em;
+  padding: 0.2em;
+  cursor: pointer;
+  margin-right: 0.2em;
+}
+
+#arr-right i {
+  font-size: 2em;
+  padding: 0.2em;
+  cursor: pointer;
+  margin-left: 0.1em;
+}
+
+#arrows {
+  color: #fbfbfb;
+  display: flex;
+}
+
+#arr-left {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #131313;
+  position: relative;
+  margin-right: 2em;
+}
+
+#arr-right {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: #131313;
+  position: relative;
+}
+
+#center-bar {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+#main {
+  margin-top: 0 !important;
+  background-color: #202020;
+}
+
+#first-album {
+  background-color: #0e0e0e;
+  margin-top: 1em !important;
+}
+#first-album div img {
+  margin: 1em 0.5em 0.5em;
+}
+#first-album div:nth-of-type(2) {
+  margin-left: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 55%;
+}
+#first-album div:nth-of-type(3) p {
+  font-size: 0.8em;
+  background-color: #222222;
+  padding: 0.3em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 10px;
+}
+#first-album h5, #first-album .h5 {
+  font-size: 0.8em;
+}
+
+.play {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  background-color: #1ed760;
+  border: 0;
+  font-weight: bold;
+  border-radius: 15px;
+  margin-right: 1em;
+}
+
+.save {
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  font-weight: bold;
+  border-radius: 20px;
+  color: #fbfbfb;
+  background-color: transparent;
+  border: 1px solid white;
+  margin-right: 1em;
+}
+
+.spread {
+  align-items: center;
+  transform: translateY(-15%);
+  border: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 2em;
+  display: inline-block;
+  justify-content: center;
+}
+.spread::after {
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.banner {
+  background-color: #2c2c2c;
+  border-radius: 5px;
+}
+.banner div img {
+  border-radius: 5px 0 0 5px;
+}
+.banner div p {
+  font-weight: bold;
+}
+
+.out-banner {
+  background-color: #222222;
+}
+
+.big-banner {
+  background-color: #222222 !important;
+  padding: 1em;
+}
+.big-banner:hover {
+  background-color: #282828 !important;
+  cursor: pointer;
+}
+.big-banner h6, .big-banner .h6 {
+  color: white;
+}
+.big-banner p {
+  color: white;
+}
+.big-banner img {
+  border-radius: 5px;
+  height: 12em;
+}
+
+.card.big-banner {
+  height: 25rem;
+}
+
+.col {
+  background-color: transparent;
+}
+
+#fa-img img {
+  width: 15rem;
+}
+
+#player {
+  background-color: #181818;
+  position: fixed;
+  height: 6rem;
+  bottom: 0;
+}
+
+.player-left {
+  width: 25%;
+}
+.player-left h6, .player-left .h6 {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.player-left p {
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+.player-left img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.player-center {
+  color: white;
+  width: 50%;
+}
+
+.player-center-top i {
+  margin-right: 1.2em;
+}
+
+.album-img {
+  height: 100px;
+}
+
+.progr-bar {
+  margin-top: 0.5em;
+  width: 25rem;
+}
+
+.player-right {
+  display: flex;
+  justify-content: end;
+  width: 25%;
+  text-align: end;
+}
+.player-right i {
+  margin-right: 1.2em;
+  font-size: 1.2em;
+}
+
+#bar2 {
+  width: 4em;
+  margin-right: 1em;
+  margin-left: -1em;
+  position: relative;
+  top: 0.6em;
+}
+
+.bi-shuffle {
+  margin-top: 0.6em;
+}
+
+.fa-step-backward,
+.fa-step-forward,
+.fa-undo-alt {
+  margin-top: 0.7em;
+}
+
+.bi-play-circle-fill {
+  font-size: 1.8em;
+  margin-right: 0.5em !important;
+}
+
+body {
+  font-family: "Circular", Times, serif !important;
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
