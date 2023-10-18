@@ -26,6 +26,8 @@ function generateArtistDetails(artist) {
   name.innerText = artist.name;
   const backgroundImg = document.getElementById("background-img");
   backgroundImg.style.backgroundImage = `url(${artist.picture_xl})`;
+  const ascoltatori = document.getElementById("nb_fan");
+  ascoltatori.innerText = aggiungiPuntini(artist.nb_fan);
 }
 
 getSingleArtistDetails();
