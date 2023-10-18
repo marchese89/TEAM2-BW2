@@ -1,10 +1,30 @@
 .fs-7 {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .play-button {
-    font-size: 40px;
-
+  font-size: 50px;
 }
 
+#background-img {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center top;
+}
 
+#verified-artist {
+  font-size: 1.5em;
+}
+#artist-name {
+  font-size: 5em;
+}
+
+ol {
+  list-style-type: decimal;
+  margin-top: 2em;
+}
+
+h3 {
+  font-size: 0.8em;
+}

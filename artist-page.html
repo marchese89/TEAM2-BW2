@@ -9,208 +9,548 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="bg-dark">
-    <div class="container">
-      <div class="row">
-        <div id="left-side-bar" class="col col-3"></div>
-        <div id="center-bar" class="col col-7">
-          <div class="row">
-            <div
-              id="background-img"
-              class="col d-flex flex-column justify-content-end"
-              style="
-                background-image: url(${details.picture});
-                height: 300px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-              "
-            >
-              <div id="description">
-                <p class="text-white d-flex align-items-center">
-                  <i
-                    class="bi bi-patch-check-fill text-primary play-button me-2"
-                  ></i
-                  >artista verificato
-                </p>
-                <h1 class="text-white">${details.name}</h1>
-                <p class="text-white">${details.nb_fan} ascoltatori mensili</p>
-              </div>
-            </div>
-            <div class="row bg-dark text-white">
-              <div class="col d-flex">
-                <div class="d-flex align-items-center">
-                  <i
-                    class="bi bi-play-circle-fill text-success m-3 play-button"
-                  ></i>
-                </div>
-                <div class="d-flex align-items-center">
-                  <p class="border border-white p-1 m-3">FOLLOWING</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <i class="bi bi-three-dots text-secondary m-3"></i>
-                </div>
-              </div>
-            </div>
-            <div class="row bg-dark text-secondary">
-              <div id="Popolari" class="col text-white">
-                <h3>Popolari</h3>
-                <ol class="mb-0">
-                  <li class="text-secondary">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-1">
-                        <img
-                          src="${details.picture}"
-                          alt=""
-                          class="m-1"
-                          style="width: 30px"
-                        />
-                      </div>
-
-                      <div class="col col-5 text-white">
-                        <h5 class="fs-7 m-auto text-start">
-                          ${details.tracklist}
-                        </h5>
-                      </div>
-                      <div class="col col-4 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="text-secondary">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-1">
-                        <img
-                          src="${details.picture}"
-                          alt=""
-                          class="m-1"
-                          style="width: 30px"
-                        />
-                      </div>
-
-                      <div class="col col-5 text-white">
-                        <h5 class="fs-7 m-auto text-start">
-                          ${details.tracklist}
-                        </h5>
-                      </div>
-                      <div class="col col-4 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="text-secondary">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-1">
-                        <img
-                          src="${details.picture}"
-                          alt=""
-                          class="m-1"
-                          style="width: 30px"
-                        />
-                      </div>
-
-                      <div class="col col-5 text-white">
-                        <h5 class="fs-7 m-auto text-start">
-                          ${details.tracklist}
-                        </h5>
-                      </div>
-                      <div class="col col-4 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="text-secondary">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-1">
-                        <img
-                          src="${details.picture}"
-                          alt=""
-                          class="m-1"
-                          style="width: 30px"
-                        />
-                      </div>
-
-                      <div class="col col-5 text-white">
-                        <h5 class="fs-7 m-auto text-start">
-                          ${details.tracklist}
-                        </h5>
-                      </div>
-                      <div class="col col-4 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="text-secondary">
-                    <div class="row d-flex align-items-center">
-                      <div class="col-1">
-                        <img
-                          src="${details.picture}"
-                          alt=""
-                          class="m-1"
-                          style="width: 30px"
-                        />
-                      </div>
-
-                      <div class="col col-5 text-white">
-                        <h5 class="fs-7 m-auto text-start">
-                          ${details.tracklist}
-                        </h5>
-                      </div>
-                      <div class="col col-4 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2 text-secondary">
-                        <p class="fs-7 m-auto text-center">${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-              <div id="Brani che ti piacciono" class="col col-4 text-white">
-                <h3 class="text-nowrap">Brani che ti piacciono</h3>
-                <div class="row">
-                  <div class="col col-3">
-                    <img
-                      src="${details.picture}"
-                      class="rounded-circle"
-                      alt=""
-                      style="width: 50px"
-                    />
-                  </div>
-                  <div
-                    class="col col-9 d-flex flex-column justify-content-evenly"
+    <div id="outer" class="d-flex">
+      <div id="left">
+        <div class="container-fluid pe-0">
+          <div class="row gx-0">
+            <!-- sidebar sinistra -->
+            <div class="sidebar col col-12 pt-3 d-none d-lg-block">
+              <!-- navbar -->
+              <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
                   >
-                    <h5 class="text-white fs-7 m-0">
-                      Hai messo mi piace a <span>n brani</span> brani
-                    </h5>
-                    <p class="text-secondary fs-7 m-0">
-                      Di <span>${details.name}</span>
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-column">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          aria-current="page"
+                          href="laura.sidebar.html"
+                          ><i class="bi bi-house-door-fill me-2"></i>Home</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"
+                          ><i class="bi bi-search me-2"></i>Search</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"
+                          ><i class="bi bi-collection me-2"></i>Your Library</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- fine navbar -->
+
+              <ul
+                class="d-none d-lg-block ms-3 mt-5 list-unstyled border-bottom mb-0 me-3"
+              >
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="bi bi-plus-square-fill me-2"></i>New playlist</a
+                  >
+                </li>
+                <li class="nav-item my-3">
+                  <a class="nav-link" href="#"
+                    ><i class="bi bi-suit-heart-fill me-2"></i>Songs you like</a
+                  >
+                </li>
+                <li class="nav-item mb-3">
+                  <a class="nav-link" href="#"
+                    ><i class="bi bi-bookmark-fill me-2"></i>Your podcasts</a
+                  >
+                </li>
+              </ul>
+              <div id="playlist" class="col-12 pt-2 ps-3">
+                <p>early stage emily sydrome</p>
+                <p>-_- cit kimiko</p>
+                <p>Be The Young</p>
+                <p>Saggio Vibes</p>
+                <p>main charaters</p>
+                <p>That Fucking mOOOOOOd</p>
+                <p>2021 lol</p>
+                <p>The dark side of the moon</p>
+                <p>Fabrizio De Andrè</p>
+                <p>early stage emily sydrome</p>
+                <p>-_- cit kimiko</p>
+                <p>Be The Young</p>
+                <p>Saggio Vibes</p>
+                <p>main charaters</p>
+                <p>That Fucking mOOOOOOd</p>
+                <p>2021 lol</p>
+                <p>Lucio Battisti</p>
+                <p>King del Rap</p>
+                <p>early stage emily sydrome</p>
+                <p>-_- cit kimiko</p>
+                <p>Be The Young</p>
+                <p>Saggio Vibes</p>
+                <p>main charaters</p>
+                <p>That Fucking mOOOOOOd</p>
+                <p>2021 lol</p>
+                <p>Viola</p>
+                <p>Salmo</p>
+                <p>early stage emily sydrome</p>
+                <p>-_- cit kimiko</p>
+                <p>Be The Young</p>
+                <p>Saggio Vibes</p>
+                <p>main charaters</p>
+                <p>That Fucking mOOOOOOd</p>
+                <p>2021 lol</p>
+                <p>Metallica</p>
+                <p>Pink Floyd</p>
+                <p>early stage emily sydrome</p>
+                <p>-_- cit kimiko</p>
+                <p>Be The Young</p>
+                <p>Saggio Vibes</p>
+                <p>main charaters</p>
+                <p>That Fucking mOOOOd</p>
+                <p>Pinguini tattici nucleari</p>
+                <p>Tommy Base</p>
+                <p>Frah Quintale</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container pe-0" id="main">
+        <div class="row">
+          <div id="center-bar" class="col col-7">
+            <div class="row">
+              <div
+                id="background-img"
+                class="col d-flex flex-column justify-content-end"
+              >
+                <div id="top" class="d-flex flex-grow-1 align-items-start mt-3">
+                  <div id="arrows">
+                    <div
+                      id="arr-left"
+                      class="d-flex justify-content-center align-items-center"
+                    >
+                      <i class="bi bi-chevron-left"></i>
+                    </div>
+                    <div
+                      id="arr-right"
+                      class="d-flex justify-content-center align-items-center"
+                    >
+                      <i class="bi bi-chevron-right"></i>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 justify-content-end d-flex">
+                    <div id="avatar" class="text-white text-nowrap">
+                      <img src="assets/imgs/avatar.png" alt="" />Lidia
+                      Nautilus...<i class="bi bi-caret-down-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <div id="description">
+                  <p class="text-white d-flex align-items-center">
+                    <i
+                      class="bi bi-patch-check-fill text-primary play-button me-2"
+                      id="verified-artist"
+                    ></i
+                    >artista verificato
+                  </p>
+                  <h1 class="text-white" id="artist-name"></h1>
+                  <p class="text-white"><span id="nb_fan"></span> mensili</p>
+                </div>
+              </div>
+              <div class="row bg-dark text-white">
+                <div class="col d-flex">
+                  <div class="d-flex align-items-center">
+                    <i
+                      class="bi bi-play-circle-fill text-success m-3 play-button"
+                    ></i>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <p
+                      class="border border-white p-1 m-3 px-3 rounded-1 fw-bold"
+                    >
+                      FOLLOWING
                     </p>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i
+                      class="bi bi-three-dots text-secondary m-3 text-white"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <div class="row bg-dark text-secondary">
+                <div id="Popolari" class="col text-white">
+                  <h3>Popolari</h3>
+                  <div class="mt-4">
+                    <ol class="mb-0 list-unstyled" id="track-list"></ol>
+                  </div>
+                </div>
+                <div id="Brani che ti piacciono" class="col col-4 text-white">
+                  <h3 class="text-nowrap mb-3">Brani che ti piacciono</h3>
+                  <div class="row">
+                    <div class="col col-3">
+                      <img class="rounded-circle" alt="" style="width: 50px" />
+                    </div>
+                    <div
+                      class="col col-9 d-flex flex-column justify-content-evenly"
+                    >
+                      <h5 class="text-white fs-7 m-0">
+                        Hai messo mi piace a <span>n brani</span> brani
+                      </h5>
+                      <p class="text-secondary fs-7 m-0">Di <span></span></p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div id="right-side-bar" class="col col-2"></div>
-        <div class="container">
-          <div class="row">
-            <div id="player" class="col"></div>
+      </div>
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 text-white bg-black ms-auto me-auto"
+        id="right"
+      >
+        <div class="d-flex justify-content-end">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-dash me-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-copy me-4"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V2Zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H6ZM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1H2Z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x-lg text-secondary"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+            />
+          </svg>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <h5>Attività amici</h5>
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              class="bi bi-person-plus text-secondary mioRettangolo"
+              viewBox="0 0 16 16"
+              onclick="mostraDiv()"
+            >
+              <path
+                d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-x-lg ms-2 text-secondary mioRettangolo"
+              viewBox="0 0 16 16"
+              onclick="togliDiv()"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
           </div>
+        </div>
+        <div class="nav nav-pills flex-column mb-auto">
+          <div class="d-flex mt-5 text-secondary" id="f1">
+            <div class="d-flex">
+              <img
+                src="assets/imgs/profile/download.jpg"
+                alt=""
+                class="rounded-circle"
+                style="width: 3em; height: 3em"
+              />
+            </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="fs-6 text-white">Charlie Hookham</h6>
+              <p style="font-size: 0.9em">In camera-Yumi Zouma</p>
+
+              <div class="d-flex mt-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-disc me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1zm4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+                <p style="font-size: 0.9em">EP III</p>
+              </div>
+            </div>
+            <div class="ms-4">
+              <p style="font-size: 0.9em">4 ore</p>
+            </div>
+          </div>
+          <div class="d-flex mt-5 text-secondary" id="f2">
+            <div class="d-flex">
+              <img
+                src="assets/imgs/profile/images.jpg"
+                alt=""
+                class="rounded-circle"
+                style="width: 3em; height: 3em"
+              />
+            </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="fs-6 text-white">Lightdark02</h6>
+              <p style="font-size: 0.9em">Aimed to Kill-Jade LeMac</p>
+
+              <div class="d-flex mt-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-disc me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1zm4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+                <p style="font-size: 0.9em">Aimed to Kill</p>
+              </div>
+            </div>
+            <div class="ms-3">
+              <p style="font-size: 0.9em">8 ore</p>
+            </div>
+          </div>
+          <div class="d-flex mt-5 text-secondary" id="f3">
+            <div class="d-flex">
+              <img
+                src="assets/imgs/profile/images 3.jpg"
+                alt=""
+                class="rounded-circle"
+                style="width: 3em; height: 3em"
+              />
+            </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="fs-6 text-white">Valeria Traverso</h6>
+              <p style="font-size: 0.9em">New Kings-Sleeping Wolf</p>
+
+              <div class="d-flex mt-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-music-note-beamed me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"
+                  />
+                  <path
+                    d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+                  />
+                </svg>
+                <p style="font-size: 0.9em">Twint Badass mood</p>
+              </div>
+            </div>
+            <div class="ms-2">
+              <p style="font-size: 0.9em">3 giorni</p>
+            </div>
+          </div>
+          <div class="d-flex mt-5 text-secondary d-none" id="nuovoF1">
+            <div class="d-flex">
+              <img
+                src="assets/imgs/profile/images 4.jpg"
+                alt=""
+                class="rounded-circle"
+                style="width: 3em; height: 3em"
+              />
+            </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="fs-6 text-white">David Ghallagher</h6>
+              <p style="font-size: 0.9em">Invisible-Flevans</p>
+
+              <div class="d-flex mt-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-music-note-beamed me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M14 11V2h1v9h-1zM6 3v10H5V3h1z"
+                  />
+                  <path
+                    d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+                  />
+                </svg>
+                <p style="font-size: 0.9em">DiRTY RADio</p>
+              </div>
+            </div>
+            <div class="ms-5">
+              <p style="font-size: 0.9em">4 giorni</p>
+            </div>
+          </div>
+          <div class="d-flex mt-5 text-secondary d-none" id="nuovoF2">
+            <div class="d-flex">
+              <img
+                src="assets/imgs/profile/images 5.jpg"
+                alt=""
+                class="rounded-circle"
+                style="width: 3em; height: 3em"
+              />
+            </div>
+            <div class="d-flex flex-column ms-3">
+              <h6 class="fs-6 text-white">Anita Bellingham</h6>
+              <p style="font-size: 0.9em">My Life-Lil Wayne</p>
+
+              <div class="d-flex mt-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-disc me-2"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1zm4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5z"
+                  />
+                </svg>
+                <p style="font-size: 0.9em">LAX(Deluxe)</p>
+              </div>
+            </div>
+            <div class="ms-5">
+              <p style="font-size: 0.9em">4 giorni</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="player" class="d-flex align-items-center">
+        <div class="player-left d-flex align-items-center text-white ms-1">
+          <div><img src="https://placedog.net/50" alt="" class="ms-2" /></div>
+          <div class="ms-3 d-flex flex-column justify-content-center">
+            <h6>Fat Funny Friend</h6>
+            <p>Maddie Zaham</p>
+          </div>
+          <div class="ms-3"><i class="bi bi-heart"></i></div>
+        </div>
+        <div class="player-center">
+          <div
+            class="player-center-top text-white d-flex justify-content-center"
+          >
+            <i class="bi bi-shuffle"></i>
+            <i class="fas fa-step-backward"></i>
+            <i class="bi bi-play-circle-fill"></i>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-undo-alt"></i>
+          </div>
+          <div class="progr-bar">
+            <div id="time-passed"></div>
+            <div id="bar">
+              <div
+                class="progress bg-secondary"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 3px"
+              >
+                <div class="progress-bar w-75"></div>
+              </div>
+            </div>
+            <div id="time-total"></div>
+          </div>
+        </div>
+        <div class="player-right text-white d-flex justify-content-end">
+          <i class="bi bi-mic"></i>
+          <i class="bi bi-list-task"></i>
+          <i class="bi bi-music-player"></i>
+          <i class="bi bi-volume-down"></i>
+          <div id="bar2">
+            <div
+              class="progress bg-secondary"
+              role="progressbar"
+              aria-label="Basic example"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="height: 3px"
+            >
+              <div class="progress-bar w-75"></div>
+            </div>
+          </div>
+          <i class="fas fa-expand-alt"></i>
         </div>
       </div>
     </div>
