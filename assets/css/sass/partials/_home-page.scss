@@ -10,7 +10,7 @@ $green: #1ed760;
 $over: #282828;
 
 body {
-  background-color: $dark1;
+  background-color: $dark1 !important;
 }
 
 #avatar {
@@ -71,12 +71,16 @@ body {
 
 #center-bar {
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 1em;
 }
 
 #main {
   margin-top: 0 !important;
   background-color: $dark1;
+  height: 99vh;
+  overflow: auto;
+  margin-left: 20em;
+  margin-right: 20em;
 }
 
 #first-album {
@@ -197,11 +201,12 @@ body {
   background-color: $dark_player;
   position: fixed;
   height: 6rem;
+  width: 100vw;
   bottom: 0;
 }
 
 .player-left {
-  width: 25%;
+  width: 30%;
   h6 {
     font-size: 0.8em;
     font-weight: bold;
@@ -219,7 +224,7 @@ body {
 
 .player-center {
   color: white;
-  width: 50%;
+  width: 40%;
 }
 
 .player-center-top i {
@@ -233,11 +238,12 @@ body {
 .progr-bar {
   margin-top: 0.5em;
   width: 25rem;
+  display: contents;
 }
 .player-right {
   display: flex;
   justify-content: end;
-  width: 25%;
+  width: 30%;
   text-align: end;
   i {
     margin-right: 1.2em;
@@ -264,4 +270,63 @@ body {
   font-size: 1.8em;
   margin-right: 0.5em !important;
   // margin-top: 0.3em;
+}
+
+//sidebar destra
+
+.mioRettangolo:hover {
+  cursor: pointer;
+}
+
+//sidebar sinistra
+
+#left {
+  background-color: black;
+  // background-color: transparent;
+  color: white;
+  width: 30em;
+  height: 100vh;
+  height: 86.5vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20em;
+  I {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    z-index: 3;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+  div div.row {
+    width: 100%;
+  }
+}
+
+#playlist {
+  height: 38.5vh;
+  overflow: auto;
+}
+
+#right {
+  width: 20em;
+  height: 86.5vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: auto;
+}
+#navbarNav {
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.sidebar {
+  padding-right: 0 !important;
 }
