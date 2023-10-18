@@ -243,7 +243,7 @@ body {
 }
 
 #player {
-  background-color: $dark_player;
+  background-color: black;
   position: fixed;
   height: 6rem;
   width: 100vw;
@@ -323,7 +323,6 @@ body {
   // margin-top: 0.3em;
 }
 
-//sidebar destra
 
 .mioRettangolo:hover {
   cursor: pointer;
@@ -380,4 +379,85 @@ body {
 
 .sidebar {
   padding-right: 0 !important;
+}
+
+.bi-pause-circle-fill {
+  font-size: 1.8em;
+  margin-right: 0.5em !important;
+}
+
+#like-tooltip {
+  font-size: 0.9em;
+  display: none;
+  background-color: #333;
+  color:#f2f2f2 ;
+  padding: 8px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  top: -20px;
+  left: 10%;
+  transform: translateX(-50%);
+  animation-duration: 0s
+}
+
+
+#like-tooltip2 {
+  font-size: 0.9em;
+   display: none;
+  background-color: rgb(71, 71, 210);
+  color:#f2f2f2 ;
+  padding: 12px 70px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  top:  -55px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.shake {
+  animation: shake 0.5s ;
+ 
+}
+
+
+
+@keyframes shake {
+  
+  0% { transform: translateX(0); }
+  10% { transform: translateX(-2px); }
+  20% { transform: translateX(2px); }
+  30% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  60% { transform: translateX(2px); }
+  70% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  90% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.big {
+  animation:  big 0.5s;
+  
+}
+
+@keyframes big {
+  0% { transform: translateX(1); }
+  10% { transform: scale(1.5); }
+  20% { transform: scale(2); }
+  30% { transform: scale(1.5); }
+  40% { transform: scale(1); }
+  50% { transform:scale(1.5); }
+  60% { transform: scale(2); }
+  70% { transform:scale(1.5); }
+  80% { transform:  scale(1); }
+  90% { transform: scale(1.5); }
+  100% { transform: translateX(1); }
+}
+
+.hover:hover {
+color: white !important;
 }
