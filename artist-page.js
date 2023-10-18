@@ -69,7 +69,7 @@ const generateTrackDetails = function (arrayOfTracks) {
                       <div class="col-1 px-0 justify-content-end d-flex">
                       ${i + 1}
                       </div>
-                      <div class="col-2">
+                      <div class="col-1">
                         <img
                           src="${element.album.cover_small}"
                           alt=""
@@ -78,7 +78,7 @@ const generateTrackDetails = function (arrayOfTracks) {
                         />
                       </div>
 
-                      <div class="col col-4 text-white">
+                      <div class="col col-3 text-white ms-3">
                         <h5 class="fs-7 m-auto text-start">${element.title}</h5>
                       </div>
                       <div class="col col-4 text-secondary">
@@ -86,7 +86,7 @@ const generateTrackDetails = function (arrayOfTracks) {
                           element.rank
                         )}</p>
                       </div>
-                      <div class="col col-1 text-secondary">
+                      <div class="col col-2 text-secondary">
                         <p class="fs-7 m-auto text-center">${convertiSecondiAMinutiESecondi(
                           element.duration
                         )}</p>
