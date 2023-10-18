@@ -507,24 +507,32 @@
       </div>
       <div id="player" class="d-flex align-items-center">
         <div class="player-left d-flex align-items-center text-white ms-1">
-          <div class="d-none d-lg-block">
-            <img src="https://placedog.net/50" alt="" class="ms-2" />
-          </div>
+          <div><img src="https://placedog.net/50" alt="" class="ms-2" /></div>
           <div class="ms-3 d-flex flex-column justify-content-center">
             <h6>Fat Funny Friend</h6>
-            <p>Maddie Zaham</p>
+            <p class="text-secondary hover">Maddie Zaham</p>
           </div>
-          <div class="ms-3"><i class="bi bi-heart"></i></div>
+          <div class="ms-3 shacker">
+            <i class="bi bi-heart" id="like-icon"></i>
+          </div>
+          <div id="like-tooltip"></div>
+          <div id="like-tooltip2"></div>
         </div>
         <div class="player-center">
           <div
             class="player-center-top text-white d-flex justify-content-center"
           >
-            <i class="bi bi-shuffle d-none d-lg-block"></i>
-            <i class="fas fa-step-backward d-none d-lg-block"></i>
-            <i class="bi bi-play-circle-fill"></i>
-            <i class="fas fa-step-forward d-none d-lg-block"></i>
-            <i class="fas fa-undo-alt d-none d-lg-block"></i>
+            <i class="bi bi-shuffle text-secondary hover d-none d-lg-block"></i>
+            <i
+              class="fas fa-step-backward text-secondary hover d-none d-lg-block"
+            ></i>
+            <i class="bi bi-play-circle-fill" id="play-pause-button"></i>
+            <i
+              class="fas fa-step-forward text-secondary hover d-none d-lg-block"
+            ></i>
+            <i
+              class="fas fa-undo-alt text-secondary hover d-none d-lg-block"
+            ></i>
           </div>
           <div class="progr-bar d-none d-lg-block">
             <div id="time-passed"></div>
@@ -545,13 +553,15 @@
           </div>
         </div>
         <div class="player-right text-white d-flex justify-content-end">
-          <i class="bi bi-mic d-none d-lg-block"></i>
-          <i class="bi bi-list-task d-none d-lg-block"></i>
-          <i class="bi bi-music-player"></i>
-          <i class="bi bi-volume-down d-none d-lg-block"></i>
-          <div id="bar2">
+          <i class="bi bi-mic text-secondary hover d-none d-lg-block"></i>
+          <i class="bi bi-list-task text-secondary hover d-none d-lg-block"></i>
+          <i class="bi bi-music-player text-secondary hover"></i>
+          <i
+            class="bi bi-volume-down text-secondary hover d-none d-lg-block"
+          ></i>
+          <div id="bar2" class="d-none d-lg-block">
             <div
-              class="progress bg-secondary d-none d-lg-block"
+              class="progress bg-secondary"
               role="progressbar"
               aria-label="Basic example"
               aria-valuenow="75"
@@ -559,38 +569,13 @@
               aria-valuemax="100"
               style="height: 3px"
             >
-              <div class="progress-bar w-75 d-none d-lg-block"></div>
+              <div class="progress-bar w-75"></div>
             </div>
           </div>
-          <i class="fas fa-expand-alt d-none d-lg-block"></i>
+          <i
+            class="fas fa-expand-alt text-secondary hover d-none d-lg-block"
+          ></i>
         </div>
-      </div>
-      <div
-        id="bottom-mobile-bar"
-        class="d-flex d-lg-none bg-black bg-opacity-50"
-      >
-        <ul
-          class="navbar-nav flex-row d-flex flex-grow-1 justify-content-around align-items-center"
-        >
-          <li class="nav-item">
-            <a
-              class="nav-link active d-flex flex-column text-center"
-              aria-current="page"
-              href="#"
-              ><i class="bi bi-house-door-fill me-2"></i>Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column text-center" href="#"
-              ><i class="bi bi-search me-2"></i>Search</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column text-center" href="#"
-              ><i class="bi bi-collection me-2"></i>Your Library</a
-            >
-          </li>
-        </ul>
       </div>
     </div>
 
