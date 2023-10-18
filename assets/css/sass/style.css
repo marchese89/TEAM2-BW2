@@ -7,6 +7,7 @@ body {
 #avatar {
   background-color: #0a0a0a;
   border-radius: 15px;
+  margin-right: 1em;
 }
 #avatar i {
   color: #fbfbfb;
@@ -322,7 +323,7 @@ body {
 }
 
 .play-button {
-  font-size: 40px;
+  font-size: 50px;
 }
 
 #background-img {
@@ -351,6 +352,26 @@ h3, .h3 {
 
 body {
   font-family: "Circular", Times, serif !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /*!
