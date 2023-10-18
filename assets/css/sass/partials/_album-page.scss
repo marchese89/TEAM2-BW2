@@ -64,9 +64,42 @@ h1 {
   color: white;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 4rem; /* Dimensione iniziale per schermi 2K */
   font-weight: 800;
   margin-bottom: 3rem;
+
+  @media (max-width: 2048px) {
+    font-size: 3.7rem; /* Dimensione per schermi tra 2K e 1848px */
+  }
+
+  @media (max-width: 1848px) {
+    font-size: 3.4rem; /* Dimensione per schermi tra 1848px e 1648px */
+  }
+
+  @media (max-width: 1678px) {
+    font-size: 2.8rem; /* Dimensione per schermi tra 1648px e 1448px */
+  }
+
+  @media (max-width: 1478px) {
+    font-size: 2.4rem; /* Dimensione per schermi tra 1448px e 1248px */
+  }
+  @media (max-width: 1350px) {
+    font-size: 2.2rem; /* Dimensione per schermi tra 1350x e 1288px */
+  }
+
+  @media (max-width: 1288px) {
+    font-size: 2rem; /* Dimensione per schermi tra 1248px e 1048px */
+  }
+
+  @media (max-width: 1088px) {
+    font-size: 1.7rem; /* Dimensione per schermi tra 1048px e 848px */
+  }
+
+  @media (max-width: 848px) {
+    font-size: 1.4rem; /* Dimensione per schermi tra 848px e 648px */
+  }
+
+  /* Aggiungi ulteriori media query secondo le esigenze fino al breakpoint per smartphone */
 }
 #artistImg {
   width: 1.5rem;
@@ -76,6 +109,28 @@ h1 {
 }
 #cover-img img {
   transition: transform 0.3s;
+  @media (max-width: 1350px) {
+    width: 12.6rem;
+    height: 12.6rem;
+  }
+  @media (max-width: 1248px) {
+    width: 12.4rem;
+    height: 12.4rem;
+  }
+
+  @media (max-width: 1048px) {
+    width: 12.2rem;
+    height: 12.2rem;
+  }
+
+  @media (max-width: 848px) {
+    width: 9.1rem;
+    height: 9.1rem;
+  }
+  @media (max-width: 768px) {
+    width: 14.1rem;
+    height: 14.1rem;
+  }
 }
 #cover-img:hover img {
   transform: scale(1.02);
@@ -124,7 +179,7 @@ h1 {
 #likeHeart,
 #downloadIcon,
 #dotsDrop {
-  font-size: 40px;
+  font-size: 35px;
   color: rgb(170, 168, 168);
   transition: transform 0.3s;
   border: 0;
@@ -156,4 +211,106 @@ h1 {
 }
 #trackList p {
   margin: 0;
+}
+#rigaTrack:hover {
+  background-color: rgba(169, 169, 169, 0.2);
+}
+.hidden {
+  visibility: hidden;
+}
+.card img {
+  width: 100%;
+  //width: 150px;
+  //height: 150px;
+}
+.card {
+  width: 180px;
+  // height: 300px;
+  background-color: $dark5;
+  border: 1px solid;
+  margin: 10px;
+  display: inline-block;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+h5 {
+  font-size: 14px;
+}
+.card:hover {
+  transform: scale(1);
+  background-color: $dark6;
+}
+
+.linkArtist {
+  text-decoration: none;
+  color: rgba(169, 169, 169);
+}
+
+.linkArtist:hover {
+  text-decoration: underline;
+}
+
+#titoloAlbumCorrelati h4 {
+  color: white;
+}
+#titoloAlbumCorrelati a {
+  text-decoration: none;
+  color: rgba(169, 169, 169);
+}
+#titoloAlbumCorrelati a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+// @media (max-width: 1399.98px) {
+//   h1 {
+//     font-size: 2rem;
+//   }
+// }
+
+.ripr {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+.colMargin {
+  @media (max-width: 1200px) {
+    margin-right: auto;
+  }
+}
+
+#right-side-bar {
+  @media (max-width: 972px) {
+    display: none;
+  }
+}
+
+#left-side-bar {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+#center-bar {
+  @media (max-width: 972px) {
+    width: 75% !important;
+  }
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
+}
+
+#arr-left,
+#arr-right,
+#btn-avatar,
+#type {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+#divAlbum {
+  @media (max-width: 768px) {
+    display: block;
+  }
 }

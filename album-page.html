@@ -103,11 +103,8 @@
               <div class="container-fluid p-4">
                 <div class="d-flex align-items-end" id="div-Album">
                   <div class="p-0" id="cover-img"></div>
-                  <div class="p-0 ms-4" id="album-description">
-                    <div
-                      class="d-flex flex-row align-items-end"
-                      id="divArtist"
-                    ></div>
+                  <div class="p-0 ms-4 flex-fill" id="album-description">
+                    <div class="d-flex flex-row" id="divArtist"></div>
                   </div>
                 </div>
               </div>
@@ -175,13 +172,35 @@
             <!--FINE BARRA PLAY-->
             <div class="container-fluid" id="trackList">
               <div class="row primaR">
-                <div class="col-auto text-start">#</div>
-                <div class="col-6">TITOLO</div>
-                <div class="col-2 me-auto text-end">
+                <div class="col-auto text-start">
+                  #<i class="bi bi-play-fill text-white hidden"></i>
+                </div>
+                <div class="col-6 colMargin">TITOLO</div>
+                <div class="col-2 me-auto text-end ripr">
                   <p>RIPRODUZIONI</p>
                 </div>
+                <div class="col-auto">
+                  <i class="bi bi-heart text-hide hidden"></i>
+                </div>
                 <div class="col-auto"><i class="bi bi-clock"></i></div>
+                <div class="col-auto">
+                  <i class="bi bi-three-dots text-white hidden"></i>
+                </div>
               </div>
+            </div>
+
+            <!--ALBUM CORRELATI-->
+            <div class="container">
+              <div class="container">
+                <div
+                  class="d-flex justify-content-between"
+                  id="titoloAlbumCorrelati"
+                ></div>
+              </div>
+              <div
+                class="d-flex flex-row justify-content-evenly"
+                id="albumCorrelati"
+              ></div>
             </div>
           </div>
         </div>
