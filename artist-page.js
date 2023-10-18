@@ -78,10 +78,10 @@ const generateTrackDetails = function (arrayOfTracks) {
                         />
                       </div>
 
-                      <div class="col col-3 text-white ms-3">
+                      <div class="col col-4 text-white ms-3">
                         <h5 class="fs-7 m-auto text-start">${element.title}</h5>
                       </div>
-                      <div class="col col-4 text-secondary">
+                      <div class="col col-3 text-secondary">
                         <p class="fs-7 m-auto text-center">${aggiungiPuntini(
                           element.rank
                         )}</p>
