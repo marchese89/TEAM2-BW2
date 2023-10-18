@@ -5,22 +5,27 @@ body {
 }
 
 #avatar {
-  background-color: #0a0a0a;
-  border-radius: 15px;
-  margin-right: 1em;
-}
-#avatar i {
-  color: #fbfbfb;
-  padding-right: 0.5em;
-  margin-left: 0.5em;
-}
-#avatar img {
-  width: 2rem;
-  border-radius: 50%;
-  margin-right: 0.5em;
-  padding: 0.2em;
+  display: none;
 }
 
+@media (min-width: 992px) {
+  #avatar {
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    margin-right: 1em;
+  }
+  #avatar i {
+    color: #fbfbfb;
+    padding-right: 0.5em;
+    margin-left: 0.5em;
+  }
+  #avatar img {
+    width: 2rem;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    padding: 0.2em;
+  }
+}
 #top {
   justify-content: center;
 }
@@ -33,12 +38,17 @@ body {
 }
 
 #arr-right i {
-  font-size: 1em;
-  padding: 0.2em;
-  cursor: pointer;
-  margin-left: 0.1em;
+  display: none;
 }
 
+@media (min-width: 992px) {
+  #arr-right i {
+    font-size: 1em;
+    padding: 0.2em;
+    cursor: pointer;
+    margin-left: 0.1em;
+  }
+}
 #arrows {
   color: #fbfbfb;
   display: flex;
@@ -54,13 +64,18 @@ body {
 }
 
 #arr-right {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  background-color: #131313;
-  position: relative;
+  display: none;
 }
 
+@media (min-width: 992px) {
+  #arr-right {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #131313;
+    position: relative;
+  }
+}
 #center-bar {
   width: 100%;
   margin-bottom: 1em;
@@ -71,10 +86,18 @@ body {
   background-color: #202020;
   height: 99vh;
   overflow: auto;
-  margin-left: 20em;
-  margin-right: 20em;
+  margin-left: 0;
+  margin-right: 0;
+  display: contents;
 }
 
+@media (min-width: 992px) {
+  #main {
+    display: flex;
+    margin-left: 20em;
+    margin-right: 20em;
+  }
+}
 #first-album {
   background-color: #0e0e0e;
   margin-top: 1em !important;
@@ -186,14 +209,27 @@ body {
   width: 15rem;
 }
 
+#bottom-mobile-bar {
+  background-color: #181818 0.5019607843;
+  position: fixed;
+  height: 6rem;
+  width: 100vw;
+  bottom: 0px;
+}
+
 #player {
   background-color: #181818;
   position: fixed;
   height: 6rem;
   width: 100vw;
-  bottom: 0;
+  bottom: 95px;
 }
 
+@media (min-width: 992px) {
+  #player {
+    bottom: 0px;
+  }
+}
 .player-left {
   width: 30%;
 }

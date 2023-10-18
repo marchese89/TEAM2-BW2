@@ -77,19 +77,24 @@ const generateTrackDetails = function (arrayOfTracks) {
                           style="width: 40px"
                         />
                       </div>
+                      <div class="flex-col flex-lg-row w-25">
 
-                      <div class="col col-4 text-white ms-3">
+                      <div class="col col-8 col-lg-4 text-white ms-0 ms-lg-3">
                         <h5 class="fs-7 m-auto text-start">${element.title}</h5>
-                      </div>
+                      </div> 
                       <div class="col col-3 text-secondary">
                         <p class="fs-7 m-auto text-center">${aggiungiPuntini(
                           element.rank
                         )}</p>
                       </div>
-                      <div class="col col-2 text-secondary">
+                      </div>
+                      <div class="col col-2 text-secondary d-none d-lg-block">
                         <p class="fs-7 m-auto text-center">${convertiSecondiAMinutiESecondi(
                           element.duration
                         )}</p>
+                      </div>
+                      <div class="col d-lg-none d-flex flex-grow-1 flex-row-reverse">
+                        <i class="bi bi-three-dots-vertical"></i>
                       </div>
                     </div>
     `;
