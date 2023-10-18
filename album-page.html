@@ -15,293 +15,395 @@
   <body>
     <div class="container-fluid">
       <div class="row mt-2">
-        <div id="left-side-bar" class="col col-3">
+        <div id="left-side-bar" class="col col-2">
           <!-- sidebar sinistra -->
 
           <!-- navbar -->
-          <nav class="navbar">
-            <div class="container-fluid">
-              <div class="navbar" id="navbarNav">
-                <ul class="navbar-nav flex-column">
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="home-page.html"
-                      ><i class="bi bi-house-door-fill me-2"></i>Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"
-                      ><i class="bi bi-search me-2"></i>Search</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"
-                      ><i class="bi bi-collection me-2"></i>Your Library</a
-                    >
-                  </li>
-                </ul>
+
+          <div class="nav container-fluid ms-1" id="navBarHome">
+            <div class="column">
+              <div class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="home-page.html"
+                  ><i class="bi bi-house-door-fill me-2"></i>Home</a
+                >
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-search me-2"></i>Search</a
+                >
+              </div>
+              <div class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-collection me-2"></i>Your Library</a
+                >
               </div>
             </div>
-          </nav>
-          <!-- fine navbar -->
+          </div>
 
-          <ul class="d-none d-lg-block ms-3 mt-5 list-unstyled border-bottom">
-            <li class="nav-item">
-              <a class="nav-link" href="#"
-                ><i class="bi bi-plus-square-fill me-2"></i>New playlist</a
-              >
-            </li>
-            <li class="nav-item my-3">
-              <a class="nav-link" href="#"
-                ><i class="bi bi-suit-heart-fill me-2"></i>Songs you like</a
-              >
-            </li>
-            <li class="nav-item mb-3">
-              <a class="nav-link" href="#"
-                ><i class="bi bi-bookmark-fill me-2"></i>Your podcasts</a
-              >
-            </li>
-          </ul>
-          <div id="playlist" class="col-12">
-            <p>early stage emily sydrome</p>
-            <p>-_- cit kimiko</p>
-            <p>Be The Young</p>
-            <p>Saggio Vibes</p>
-            <p>main charaters</p>
-            <p>That Fucking mOOOOOOd</p>
-            <p>2021 lol</p>
-            <p>The dark side of the moon</p>
-            <p>Fabrizio De Andrè</p>
-            <p>early stage emily sydrome</p>
-            <p>-_- cit kimiko</p>
-            <p>Be The Young</p>
-            <p>Saggio Vibes</p>
-            <p>main charaters</p>
-            <p>That Fucking mOOOOOOd</p>
-            <p>2021 lol</p>
-            <p>Lucio Battisti</p>
-            <p>King del Rap</p>
-            <p>early stage emily sydrome</p>
-            <p>-_- cit kimiko</p>
-            <p>Be The Young</p>
-            <p>Saggio Vibes</p>
-            <p>main charaters</p>
-            <p>That Fucking mOOOOOOd</p>
-            <p>2021 lol</p>
-            <p>Viola</p>
-            <p>Salmo</p>
-            <p>early stage emily sydrome</p>
-            <p>-_- cit kimiko</p>
-            <p>Be The Young</p>
-            <p>Saggio Vibes</p>
-            <p>main charaters</p>
-            <p>That Fucking mOOOOOOd</p>
-            <p>2021 lol</p>
-            <p>Metallica</p>
-            <p>Pink Floyd</p>
-            <p>early stage emily sydrome</p>
-            <p>-_- cit kimiko</p>
-            <p>Be The Young</p>
-            <p>Saggio Vibes</p>
-            <p>main charaters</p>
-            <p>That Fucking mOOOOd</p>
-            <p>Pinguini tattici nucleari</p>
-            <p>Tommy Base</p>
-            <p>Frah Quintale</p>
+          <!-- fine navbar -->
+          <div class="nav container-fluid ms-1 mt-4" id="navBarIcon">
+            <div class="column">
+              <div class="nav-item align-text-middle">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-plus" id="newPlaylistIcon"></i>New
+                  playlist</a
+                >
+              </div>
+              <div class="nav-item mb-1">
+                <a class="nav-link" href="#"
+                  ><img
+                    src="assets/imgs/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg"
+                    id="likedSongIcon"
+                  />Songs you like</a
+                >
+              </div>
+              <div class="nav-item mb-3">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-bookmark-fill" id="yourPodcastIcon"></i>Your
+                  podcasts</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="playlist" class="col-12 ps-3 pe-0 mt-3">
+            <div id="playlist2">
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOOOd</p>
+              <p>2021 lol</p>
+              <p>The dark side of the moon</p>
+              <p>Fabrizio De Andrè</p>
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOOOd</p>
+              <p>2021 lol</p>
+              <p>Lucio Battisti</p>
+              <p>King del Rap</p>
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOOOd</p>
+              <p>2021 lol</p>
+              <p>Viola</p>
+              <p>Salmo</p>
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOOOd</p>
+              <p>2021 lol</p>
+              <p>Metallica</p>
+              <p>Pink Floyd</p>
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOd</p>
+              <p>Pinguini tattici nucleari</p>
+              <p>Tommy Base</p>
+              <p>Frah Quintale</p>
+            </div>
           </div>
         </div>
-        <div id="center-bar" class="col col-7 p-0">
-          <!--BARRA SUPERIORE-->
-          <div id="provacolore">
-            <nav class="d-flex align-items-center pb-2">
-              <div
-                class="d-flex flex-row align-items-center text-decoration-none ms-3 me-auto mb-lg-0"
-              >
-                <span class="">
-                  <a class="btn p-0 m-2" href="#">
-                    <i class="bi bi-chevron-left text-white" id="arr-left"></i>
-                  </a>
-                </span>
-                <span class="">
-                  <a class="btn p-0 m-1" href="#">
-                    <i
-                      class="bi bi-chevron-right text-white"
-                      id="arr-right"
-                    ></i>
-                  </a>
-                </span>
-              </div>
-              <div class="dropdown me-3">
-                <button
-                  class="btn rounded-pill dropdown-toggle"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  id="btn-avatar"
-                >
-                  <img id="avatar" src="assets/imgs/avatar.png" />
-                  Lidia Nautilus ...
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Account</a
-                      >
-                    </li>
-                    <li class="col-2">
-                      <i class="bi-box-arrow-up-right text-white"></i>
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Profilo</a
-                      >
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Assistenza</a
-                      >
-                    </li>
-                    <li class="col-2">
-                      <i class="bi-box-arrow-up-right text-white"></i>
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Download</a
-                      >
-                    </li>
-                    <li class="col-2">
-                      <i class="bi-box-arrow-up-right text-white"></i>
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Impostazioni</a
-                      >
-                    </li>
-                  </div>
 
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item text-white" href="#">Esci</a></li>
-                </ul>
-              </div>
-            </nav>
+        <div id="center-bar" class="col col-8 p-0">
+          <div class="custom-scrollbar">
             <!--BARRA SUPERIORE-->
-            <div id="album">
-              <div class="container-fluid p-4">
-                <div class="d-flex align-items-end" id="div-Album">
-                  <div class="p-0" id="cover-img"></div>
-                  <div class="p-0 ms-4 flex-fill" id="album-description">
-                    <div class="d-flex flex-row" id="divArtist"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--FINE BARRA SUPERIORE-->
-          </div>
-          <div class="container-fluid" id="songList">
-            <!--INIZIO BARRA PLAY-->
-            <div class="d-flex" id="buttonDiv">
-              <button type="button" class="btn" id="playGreen">
-                <i class="bi bi-play-circle-fill"></i>
-              </button>
-              <button type="button" class="btn" id="likeHeart">
-                <i class="bi bi-heart"></i>
-              </button>
-              <button type="button" class="btn" id="downloadIcon">
-                <i class="bi bi-arrow-down-circle"></i>
-              </button>
-              <div class="dropdown align-self-center">
-                <button
-                  type="button"
-                  class="btn"
-                  data-bs-toggle="dropdown"
-                  id="dotsDrop"
-                >
-                  <i class="bi bi-three-dots"></i>
-                </button>
-
-                <ul class="dropdown-menu dropdown-menu-dark bg-dark">
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Aggiungi a La tua libreria</a
-                      >
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Aggiungi in coda</a
-                      >
-                    </li>
-                  </div>
-                  <div class="dropdown-item d-flex justify-content-between">
-                    <li class="col-10">
-                      <a class="text-white text-decoration-none" href="#"
-                        >Vai a Radio dell'artista</a
-                      >
-                    </li>
-                  </div>
-
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item text-white" href="#"
-                      >Aggiungi alla playlist</a
-                    >
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item text-white" href="#">Condividi</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!--FINE BARRA PLAY-->
-            <div class="container-fluid" id="trackList">
-              <div class="row primaR">
-                <div class="col-auto text-start">
-                  #<i class="bi bi-play-fill text-white hidden"></i>
-                </div>
-                <div class="col-6 colMargin">TITOLO</div>
-                <div class="col-2 me-auto text-end ripr">
-                  <p>RIPRODUZIONI</p>
-                </div>
-                <div class="col-auto">
-                  <i class="bi bi-heart text-hide hidden"></i>
-                </div>
-                <div class="col-auto"><i class="bi bi-clock"></i></div>
-                <div class="col-auto">
-                  <i class="bi bi-three-dots text-white hidden"></i>
-                </div>
-              </div>
-            </div>
-
-            <!--ALBUM CORRELATI-->
-            <div class="container">
-              <div class="container">
+            <div id="provacolore">
+              <nav class="d-flex align-items-center pb-2">
                 <div
-                  class="d-flex justify-content-between"
-                  id="titoloAlbumCorrelati"
+                  class="d-flex flex-row align-items-center text-decoration-none ms-3 me-auto mb-lg-0"
+                >
+                  <span class="">
+                    <a class="btn p-0 m-2" href="#">
+                      <i
+                        class="bi bi-chevron-left text-white"
+                        id="arr-left"
+                      ></i>
+                    </a>
+                  </span>
+                  <span class="">
+                    <a class="btn p-0 m-1" href="#">
+                      <i
+                        class="bi bi-chevron-right text-white"
+                        id="arr-right"
+                      ></i>
+                    </a>
+                  </span>
+                </div>
+                <div class="dropdown me-3">
+                  <button
+                    class="btn rounded-pill dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    id="btn-avatar"
+                  >
+                    <img id="avatar" src="assets/imgs/avatar.png" />
+                    Lidia Nautilus ...
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Account</a
+                        >
+                      </li>
+                      <li class="col-2">
+                        <i class="bi-box-arrow-up-right text-white"></i>
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Profilo</a
+                        >
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Assistenza</a
+                        >
+                      </li>
+                      <li class="col-2">
+                        <i class="bi-box-arrow-up-right text-white"></i>
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Download</a
+                        >
+                      </li>
+                      <li class="col-2">
+                        <i class="bi-box-arrow-up-right text-white"></i>
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Impostazioni</a
+                        >
+                      </li>
+                    </div>
+
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Esci</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <!--BARRA SUPERIORE-->
+              <div id="album">
+                <div class="container-fluid p-4">
+                  <div class="d-flex align-items-end" id="div-Album">
+                    <div class="p-0" id="cover-img"></div>
+                    <div class="p-0 ms-4 flex-fill" id="album-description">
+                      <div class="d-flex flex-row" id="divArtist"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FINE BARRA SUPERIORE-->
+            </div>
+            <div class="container-fluid" id="songList">
+              <!--INIZIO BARRA PLAY-->
+              <div class="d-flex" id="buttonDiv">
+                <button type="button" class="btn" id="playGreen">
+                  <i class="bi bi-play-circle-fill"></i>
+                </button>
+                <button type="button" class="btn" id="likeHeart">
+                  <i class="bi bi-heart"></i>
+                </button>
+                <button type="button" class="btn" id="downloadIcon">
+                  <i class="bi bi-arrow-down-circle"></i>
+                </button>
+                <div class="dropdown align-self-center">
+                  <button
+                    type="button"
+                    class="btn"
+                    data-bs-toggle="dropdown"
+                    id="dotsDrop"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+
+                  <ul class="dropdown-menu dropdown-menu-dark bg-dark">
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Aggiungi a La tua libreria</a
+                        >
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Aggiungi in coda</a
+                        >
+                      </li>
+                    </div>
+                    <div class="dropdown-item d-flex justify-content-between">
+                      <li class="col-10">
+                        <a class="text-white text-decoration-none" href="#"
+                          >Vai a Radio dell'artista</a
+                        >
+                      </li>
+                    </div>
+
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item text-white" href="#"
+                        >Aggiungi alla playlist</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item text-white" href="#">Condividi</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!--FINE BARRA PLAY-->
+              <div class="container-fluid" id="trackList">
+                <div class="row primaR">
+                  <div class="col-auto text-start">
+                    #<i class="bi bi-play-fill text-white hidden"></i>
+                  </div>
+                  <div class="col-6 colMargin">TITOLO</div>
+                  <div class="col-2 me-auto text-end ripr">
+                    <p>RIPRODUZIONI</p>
+                  </div>
+                  <div class="col-auto">
+                    <i class="bi bi-heart text-hide hidden"></i>
+                  </div>
+                  <div class="col-auto"><i class="bi bi-clock"></i></div>
+                  <div class="col-auto">
+                    <i class="bi bi-three-dots text-white hidden"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!--ALBUM CORRELATI-->
+              <div class="container">
+                <div class="container">
+                  <div
+                    class="d-flex justify-content-between"
+                    id="titoloAlbumCorrelati"
+                  ></div>
+                </div>
+                <div
+                  class="d-flex flex-row justify-content-evenly"
+                  id="albumCorrelati"
                 ></div>
               </div>
-              <div
-                class="d-flex flex-row justify-content-evenly"
-                id="albumCorrelati"
-              ></div>
             </div>
           </div>
         </div>
-        <div id="right-side-bar" class="col col-2"></div>
+        <div id="right-side-bar" class="col col-2">
+          <!--INIZIO NAVBAR-->
+          <nav class="d-flex align-items-center pb-2">
+            <div class="d-flex flex-row align-items-center ms-3 me-auto">
+              <h4>Attività amici</h4>
+            </div>
+            <div
+              class="d-flex flex-row align-items-center justify-content-end ms-auto"
+            >
+              <span class="">
+                <a class="btn p-0 m-2" href="#">
+                  <i class="bi bi-person-plus" id="person"></i>
+                </a>
+              </span>
+              <span class="">
+                <a class="btn p-0 m-1" href="#">
+                  <i class="bi bi-x-lg" id="close"></i>
+                </a>
+              </span>
+            </div>
+          </nav>
+          <!--FINE NAVBAR-->
+          <div class="container">
+            <div class="row align-items-start mt-4" id="dattagliFriend">
+              <div class="col-3">
+                <img
+                  src="assets/imgs/profile/images 4.jpg"
+                  class="profileImg img-fluid"
+                />
+              </div>
+              <div class="col-7" id="dattagliFriend">
+                <div class="row">
+                  <div class="col-12"><h6>Charlie Hookham</h6></div>
+                  <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
+                  <div class="col-12 d-flex">
+                    <i class="bi bi-vinyl" id="iconVinil"></i>
+                    <p>EP III</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <p>4 ore</p>
+              </div>
+            </div>
+            <div class="row align-items-start mt-5" id="dattagliFriend">
+              <div class="col-3">
+                <img
+                  src="assets/imgs/profile/images 3.jpg"
+                  class="profileImg img-fluid"
+                />
+              </div>
+              <div class="col-7" id="dattagliFriend">
+                <div class="row">
+                  <div class="col-12"><h6>Charlie Hookham</h6></div>
+                  <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
+                  <div class="col-12 d-flex">
+                    <i class="bi bi-vinyl" id="iconVinil"></i>
+                    <p>EP III</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <p>4 ore</p>
+              </div>
+            </div>
+            <div class="row align-items-start mt-5" id="dattagliFriend">
+              <div class="col-3">
+                <img
+                  src="assets/imgs/profile/images 5.jpg"
+                  class="profileImg img-fluid"
+                />
+              </div>
+              <div class="col-7" id="dattagliFriend">
+                <div class="row">
+                  <div class="col-12"><h6>Charlie Hookham</h6></div>
+                  <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
+                  <div class="col-12 d-flex">
+                    <i class="bi bi-vinyl" id="iconVinil"></i>
+                    <p>EP III</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-2">
+                <p>4 ore</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="container">
           <div class="row">
             <div id="player" class="col"></div>
