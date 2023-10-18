@@ -1,0 +1,51 @@
+#footerMobile {
+  background-color: rgba(12, 12, 12, 0.842);
+}
+
+.headerButtons {
+  background-color: rgb(19, 19, 19);
+}
+
+.grey {
+  color: grey;
+}
+
+.classGrey {
+  color: grey;
+}
+.classGrey:hover {
+  color: white;
+}
+
+.arrow {
+  border-radius: 100% !important;
+  background-color: #121212;
+}
+
+#player {
+  box-shadow: grey 0px -1px 2px 0px;
+}
+
+#cardColor {
+  background-color: rgba(24, 24, 24, 0.4196078431);
+}
+
+.img {
+  border-radius: 15px;
+}
+
+#album {
+  font-size: 5em;
+}
+
+#myHead div {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-gray {
+  background-color: rgb(99, 99, 99);
+}
+
+.img-albumList {
+  width: 25px;
+}/*# sourceMappingURL=search.css.map */

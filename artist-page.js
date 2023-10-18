@@ -1,78 +1,12 @@
 const addressBarContent = new URLSearchParams(location.search);
-const eventId = addressBarContent.get("eventId");
-console.log(eventId);
+const artistId = addressBarContent.get("artistId");
+console.log(artistId);
 const generateEventArtistDetails = function (details) {
   const col = document.getElementById("center-bar");
-  col.innerHTML = `
-  <div class="row">
-            <div id="background-img" class="col vh-50" src="${details.picture}">
-              <p>
-                <i class="bi bi-patch-check-fill text-primary"></i>artista
-                verificato
-              </p>
-              <h1>${details.name}</h1>
-              <p>${details.share} ascoltatori mensili</p>
-            </div>
-            <div class="row bg-dark text-white">
-              <div class="col d-flex">
-                <i class="bi bi-play-circle-fill text-success m-3"></i>
-                <p class="border border-white p-1 m-3">FOLLOWING</p>
-                <i class="bi bi-three-dots text-secondary m-3"></i>
-              </div>
-            </div>
-            <div class="row bg-dark text-secondary">
-              <div id="Popolari" class="col text-white">
-                <h3>Popolari</h3>
-                <ol>
-                  <li>
-                    <div class="row">
-                      <div class="col col-1">
-                        <img src="${details.picture}" alt="" />
-                      </div>
-                      <div class="col col-5 text-white">
-                        <h5>${details.tracklist}</h5>
-                      </div>
-                      <div class="col col-4">
-                        <p>${details.nb_fan}</p>
-                      </div>
-                      <div class="col col-2">
-                        <p>${details.time}</p>
-                      </div>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-              <div id="Brani che ti piacciono" class="col text-white">
-                <h3>Brani che ti piacciono</h3>
-                <div class="row">
-                  <div class="col col-2">
-                    <img
-                      src="${details.picture}"
-                      class="rounded-circle"
-                      alt=""
-                    />
-                    <span
-                      class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle"
-                      ><i class="bi bi-heart-fill bg-white"></i
-                    ></span>
-                  </div>
-                  <div class="col col-10">
-                    <h5 class="text-white">
-                      Hai messo mi piace a <span>n brani</span> brani
-                    </h5>
-                    <p class="text-secondary">
-                      Di <span>${details.name}</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    `;
 };
 
-const getSingleEventArtistDetails = function () {
-  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + eventId)
+const getSingleArtistDetails = function () {
+  fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + artistId)
     .then((res) => {
       if (res.ok) {
         return res.json();
@@ -80,10 +14,113 @@ const getSingleEventArtistDetails = function () {
         throw new Error("Errore nel caricamento dei dettagli");
       }
     })
-    .then((eventData) => {
-      generateEventArtistDetails(eventData);
+    .then((data) => {
+      generateArtistDetails(data);
+      console.log(data);
     })
     .catch((err) => console.log("ERRORE", err));
 };
 
-getSingleEventArtistDetails();
+function generateArtistDetails(artist) {
+  const name = document.getElementById("artist-name");
+  name.innerText = artist.name;
+  const backgroundImg = document.getElementById("background-img");
+  backgroundImg.style.backgroundImage = `url(${artist.picture_xl})`;
+  const ascoltatori = document.getElementById("nb_fan");
+  ascoltatori.innerText = aggiungiPuntini(artist.nb_fan);
+}
+
+getSingleArtistDetails();
+
+function aggiungiPuntini(numero) {
+  // Converte il numero in una stringa
+  var numeroStringa = numero.toString();
+
+  // Dividi la stringa in gruppi di tre cifre da destra a sinistra
+  var gruppi = [];
+  while (numeroStringa.length > 0) {
+    gruppi.unshift(numeroStringa.slice(-3));
+    numeroStringa = numeroStringa.slice(0, -3);
+  }
+
+  // Unisci i gruppi con i puntini
+  return gruppi.join(".");
+}
+
+function convertiSecondiAMinutiESecondi(secondi) {
+  var minuti = Math.floor(secondi / 60);
+  var restantiSecondi = secondi % 60;
+
+  // Aggiungi uno zero iniziale se i secondi sono inferiori a 10
+  restantiSecondi =
+    restantiSecondi < 10 ? "0" + restantiSecondi : restantiSecondi;
+
+  return minuti + ":" + restantiSecondi;
+}
+
+const generateTrackDetails = function (arrayOfTracks) {
+  const track = document.getElementById("track-list");
+  console.log(arrayOfTracks);
+  arrayOfTracks.data.forEach((element, i) => {
+    const newLi = document.createElement("li");
+    newLi.classList.add = "text-secondary";
+    newLi.innerHTML = `
+                    <div class="row d-flex align-items-center">
+                      <div class="col-1 px-0 justify-content-end d-flex">
+                      ${i + 1}
+                      </div>
+                      <div class="col-1">
+                        <img
+                          src="${element.album.cover_small}"
+                          alt=""
+                          class="me-1 my-1"
+                          style="width: 40px"
+                        />
+                      </div>
+                      <div class="flex-col flex-lg-row w-25">
+
+                      <div class="col col-8 col-lg-4 text-white ms-0 ms-lg-3">
+                        <h5 class="fs-7 m-auto text-start">${element.title}</h5>
+                      </div> 
+                      <div class="col col-3 text-secondary">
+                        <p class="fs-7 m-auto text-center">${aggiungiPuntini(
+                          element.rank
+                        )}</p>
+                      </div>
+                      </div>
+                      <div class="col col-2 text-secondary d-none d-lg-block">
+                        <p class="fs-7 m-auto text-center">${convertiSecondiAMinutiESecondi(
+                          element.duration
+                        )}</p>
+                      </div>
+                      <div class="col d-lg-none d-flex flex-grow-1 flex-row-reverse">
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </div>
+                    </div>
+    `;
+
+    track.appendChild(newLi);
+  });
+};
+
+const getTrackDetails = function () {
+  fetch(
+    "https://striveschool-api.herokuapp.com/api/deezer/artist/" +
+      artistId +
+      "/top?limit=10"
+  )
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Errore nel caricamento dei dettagli");
+      }
+    })
+    .then((eventTrackData) => {
+      generateTrackDetails(eventTrackData);
+      console.log(eventTrackData);
+    })
+    .catch((err) => console.log("ERRORE", err));
+};
+
+getTrackDetails();
