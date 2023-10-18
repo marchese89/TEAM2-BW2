@@ -26,14 +26,14 @@ body {
 }
 
 #arr-left i {
-  font-size: 2em;
+  font-size: 1em;
   padding: 0.2em;
   cursor: pointer;
   margin-right: 0.2em;
 }
 
 #arr-right i {
-  font-size: 2em;
+  font-size: 1em;
   padding: 0.2em;
   cursor: pointer;
   margin-left: 0.1em;
@@ -45,17 +45,17 @@ body {
 }
 
 #arr-left {
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   background-color: #131313;
   position: relative;
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 #arr-right {
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   background-color: #131313;
   position: relative;

@@ -38,14 +38,14 @@ body {
 }
 
 #arr-left i {
-  font-size: 2em;
+  font-size: 1em;
   padding: 0.2em;
   cursor: pointer;
   margin-right: 0.2em;
 }
 
 #arr-right i {
-  font-size: 2em;
+  font-size: 1em;
   padding: 0.2em;
   cursor: pointer;
   margin-left: 0.1em;
@@ -57,8 +57,8 @@ body {
 }
 
 @mixin divArrow {
-  height: 3rem;
-  width: 3rem;
+  height: 2rem;
+  width: 2rem;
   border-radius: 50%;
   background-color: $dark2;
   position: relative;
@@ -66,7 +66,7 @@ body {
 
 #arr-left {
   @include divArrow();
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 #arr-right {
