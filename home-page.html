@@ -58,9 +58,9 @@
             </div>
             <div class="d-flex flex-column">
               <h5>ALBUM</h5>
-              <h2 class="album-title">VIOLA (feat. Salmo)</h2>
-              <p class="artist">Feded, Salmo</p>
-              <p class="slogan">Ascolta il nuovo album di Fedez e Salmo!</p>
+              <h2 id="album-title">VIOLA (feat. Salmo)</h2>
+              <p id="artist">Feded, Salmo</p>
+              <p id="slogan">Ascolta il nuovo album di <span></span>!</p>
               <div class="album-buttons">
                 <button class="play">Play</button>
                 <button class="save">Salva</button>
@@ -77,9 +77,9 @@
           <div class="container-fluid">
             <div class="row row-cols-3 mb-3 gy-3">
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album1">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -87,9 +87,9 @@
                 </div>
               </div>
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album2">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -97,9 +97,9 @@
                 </div>
               </div>
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album3">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -107,9 +107,9 @@
                 </div>
               </div>
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album4">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -117,9 +117,9 @@
                 </div>
               </div>
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album5">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -127,9 +127,9 @@
                 </div>
               </div>
               <div class="col">
-                <div class="banner d-flex align-items-center">
+                <div class="banner d-flex align-items-center" id="album6">
                   <div class="me-3">
-                    <img src="https://placedog.net/100" alt="" />
+                    <img alt="" class="album-img" />
                   </div>
                   <div class="text-white">
                     <p class="search">early stage emily</p>
@@ -139,61 +139,13 @@
             </div>
           </div>
           <h4 class="text-white my-4">Altro di ciò che ti piace</h4>
-          <div class="container-fluid w-75">
-            <div class="row row-cols-4 gx-3">
-              <div class="col out-banner">
-                <div class="card big-banner">
-                  <div>
-                    <img src="https://placedog.net/200" alt="" class="w-100" />
-                  </div>
-                  <div>
-                    <h6 class="mt-3">Hot Hits Italia</h6>
-                    <p>La playlist più calda del</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col out-banner">
-                <div class="card big-banner">
-                  <div>
-                    <img src="https://placedog.net/200" alt="" class="w-100" />
-                  </div>
-                  <div>
-                    <h6 class="mt-3">Hot Hits Italia</h6>
-                    <p>La playlist più calda del</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col out-banner">
-                <div class="card big-banner">
-                  <div>
-                    <img src="https://placedog.net/200" alt="" class="w-100" />
-                  </div>
-                  <div>
-                    <h6 class="mt-3">Hot Hits Italia</h6>
-                    <p>La playlist più calda del</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col out-banner">
-                <div class="card big-banner">
-                  <div>
-                    <img src="https://placedog.net/200" alt="" class="w-100" />
-                  </div>
-                  <div>
-                    <h6 class="mt-3">Hot Hits Italia</h6>
-                    <p>La playlist più calda del</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="container-fluid w-100">
+            <div class="row row-cols-4 gx-3 gy-3" id="main-albums"></div>
           </div>
         </div>
         <div id="right-side-bar" class="col col-2"></div>
 
-        <div
-          id="player"
-          class="d-flex justify-content-between align-items-center"
-        >
+        <div id="player" class="d-flex align-items-center">
           <div class="player-left d-flex align-items-center text-white">
             <div><img src="https://placedog.net/50" alt="" /></div>
             <div class="ms-3 d-flex flex-column justify-content-center">
@@ -212,16 +164,17 @@
               <i class="fas fa-step-forward"></i>
               <i class="fas fa-undo-alt"></i>
             </div>
-            <div class="progress">
+            <div class="progr-bar">
               <div id="time-passed"></div>
               <div id="bar">
                 <div
-                  class="progress"
+                  class="progress bg-secondary"
                   role="progressbar"
                   aria-label="Basic example"
                   aria-valuenow="75"
                   aria-valuemin="0"
                   aria-valuemax="100"
+                  style="height: 3px"
                 >
                   <div class="progress-bar w-75"></div>
                 </div>
@@ -229,7 +182,26 @@
               <div id="time-total"></div>
             </div>
           </div>
-          <div class="player-right"></div>
+          <div class="player-right text-white d-flex justify-content-end">
+            <i class="bi bi-mic"></i>
+            <i class="bi bi-list-task"></i>
+            <i class="bi bi-music-player"></i>
+            <i class="bi bi-volume-down"></i>
+            <div id="bar2">
+              <div
+                class="progress bg-secondary"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 3px"
+              >
+                <div class="progress-bar w-75"></div>
+              </div>
+            </div>
+            <i class="fas fa-expand-alt"></i>
+          </div>
         </div>
       </div>
     </div>

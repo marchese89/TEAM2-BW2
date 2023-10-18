@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>clone spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="sinistra.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
   </head>
-  <body>
-    <div id="searchBar" class="hidden">
-      <input type="text" placeholder="Cerca..." />
-      <button id="searchButton">Cerca</button>
-    </div>
-    <div class="row">
-      <div class="col-3 m-0 d-none d-md-block" id="aside-left">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 mb-3">
-              <div class="mt-1">
-                <i class="bi bi-three-dots"></i>
+  <body data-bs-theme="dark">
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- sidebar sinistra -->
+          <div class="sidebar col col-md-2 pt-3 d-none d-lg-block">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav flex-column">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        aria-current="page"
+                        href="laura.sidebar.html"
+                        ><i class="bi bi-house-door-fill me-2"></i>Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"
+                        ><i class="bi bi-search me-2"></i>Search</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"
+                        ><i class="bi bi-collection me-2"></i>Your Library</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div class="mt-1 d-flex" id="backtohome">
-                <i class="bi bi-house"></i>
-                <p class="ms-2">Home</p>
-              </div>
-              <div class="mt-1 d-flex" id="toggleButton">
-                <i class="bi bi-search"></i>
-                <p class="ms-2">Cerca</p>
-              </div>
-              <div class="mt-1 d-flex">
-                <i class="bi bi-list"></i>
-                <p class="ms-2">La tua libreia</p>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="mt-1 d-flex">
-                <img src="" alt="Crea Playlist" width="20px" height="20px" />
-                <p class="ms-2">Crea La Tua Playlist</p>
-              </div>
-              <div class="mt-1 d-flex">
-                <img src="" alt="Crea Playlist" width="20px" height="20px" />
-                <p class="ms-2">Brani che ti piacciono</p>
-              </div>
-              <div class="mt-1 d-flex">
-                <img src="" alt="Crea Playlist" width="20px" height="20px" />
-                <p class="ms-2">I Tuoi Episodi</p>
-              </div>
-            </div>
-            <hr />
+            </nav>
+            <!-- fine navbar -->
+
+            <ul class="d-none d-lg-block ms-3 mt-5 list-unstyled border-bottom">
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-plus-square-fill me-2"></i>New playlist</a
+                >
+              </li>
+              <li class="nav-item my-3">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-suit-heart-fill me-2"></i>Songs you like</a
+                >
+              </li>
+              <li class="nav-item mb-3">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-bookmark-fill me-2"></i>Your podcasts</a
+                >
+              </li>
+            </ul>
             <div id="playlist" class="col-12">
               <p>early stage emily sydrome</p>
               <p>-_- cit kimiko</p>
@@ -55,8 +87,8 @@
               <p>main charaters</p>
               <p>That Fucking mOOOOOOd</p>
               <p>2021 lol</p>
-              <p>Viola Salmo</p>
-              <p>NONONO</p>
+              <p>The dark side of the moon</p>
+              <p>Fabrizio De Andrè</p>
               <p>early stage emily sydrome</p>
               <p>-_- cit kimiko</p>
               <p>Be The Young</p>
@@ -64,8 +96,17 @@
               <p>main charaters</p>
               <p>That Fucking mOOOOOOd</p>
               <p>2021 lol</p>
-              <p>Francesco Guccini mix</p>
-              <p>Frah Quintale mix</p>
+              <p>Lucio Battisti</p>
+              <p>King del Rap</p>
+              <p>early stage emily sydrome</p>
+              <p>-_- cit kimiko</p>
+              <p>Be The Young</p>
+              <p>Saggio Vibes</p>
+              <p>main charaters</p>
+              <p>That Fucking mOOOOOOd</p>
+              <p>2021 lol</p>
+              <p>Viola</p>
+              <p>Salmo</p>
               <p>early stage emily sydrome</p>
               <p>-_- cit kimiko</p>
               <p>Be The Young</p>
@@ -80,23 +121,19 @@
               <p>Be The Young</p>
               <p>Saggio Vibes</p>
               <p>main charaters</p>
-              <p>That Fucking mOOOOOOd</p>
-              <p>2021 lol</p>
-              <p>The dark side of the moon</p>
-              <p>Lolita</p>
-              <p>early stage emily sydrome</p>
-              <p>-_- cit kimiko</p>
-              <p>Be The Young</p>
-              <p>Saggio Vibes</p>
-              <p>main charaters</p>
-              <p>That Fucking mOOOOOOd</p>
-              <p>2021 lol</p>
-              <p>Camilla Cabello</p>
+              <p>That Fucking mOOOOd</p>
               <p>Pinguini tattici nucleari</p>
+              <p>Tommy Base</p>
+              <p>Frah Quintale</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+      ></script>
+    </main>
   </body>
 </html>

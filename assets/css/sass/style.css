@@ -167,6 +167,11 @@ body {
 }
 .big-banner img {
   border-radius: 5px;
+  height: 12em;
+}
+
+.card.big-banner {
+  height: 25rem;
 }
 
 .col {
@@ -180,10 +185,13 @@ body {
 #player {
   background-color: #181818;
   position: fixed;
-  height: 5rem;
+  height: 6rem;
   bottom: 0;
 }
 
+.player-left {
+  width: 25%;
+}
 .player-left h6, .player-left .h6 {
   font-size: 0.8em;
   font-weight: bold;
@@ -200,10 +208,54 @@ body {
 
 .player-center {
   color: white;
+  width: 50%;
 }
 
 .player-center-top i {
   margin-right: 1.2em;
+}
+
+.album-img {
+  height: 100px;
+}
+
+.progr-bar {
+  margin-top: 0.5em;
+  width: 25rem;
+}
+
+.player-right {
+  display: flex;
+  justify-content: end;
+  width: 25%;
+  text-align: end;
+}
+.player-right i {
+  margin-right: 1.2em;
+  font-size: 1.2em;
+}
+
+#bar2 {
+  width: 4em;
+  margin-right: 1em;
+  margin-left: -1em;
+  position: relative;
+  top: 0.6em;
+}
+
+.bi-shuffle {
+  margin-top: 0.6em;
+}
+
+.fa-step-backward,
+.fa-step-forward,
+.fa-undo-alt {
+  margin-top: 0.7em;
+}
+
+.bi-play-circle-fill {
+  font-size: 1.8em;
+  margin-right: 0.5em !important;
 }
 
 .fs-7 {

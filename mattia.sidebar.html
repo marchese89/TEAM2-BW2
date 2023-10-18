@@ -11,6 +11,11 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    .mioRettangolo:hover {
+      cursor: pointer;
+    }
+  </style>
   <body>
     <div
       class="d-flex flex-column flex-shrink-0 p-3 text-white bg-black ms-auto me-auto"
@@ -61,8 +66,9 @@
             width="25"
             height="25"
             fill="currentColor"
-            class="bi bi-person-plus text-secondary"
+            class="bi bi-person-plus text-secondary mioRettangolo"
             viewBox="0 0 16 16"
+            onclick="mostraDiv()"
           >
             <path
               d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
@@ -77,8 +83,9 @@
             width="20"
             height="20"
             fill="currentColor"
-            class="bi bi-x-lg ms-2 text-secondary"
+            class="bi bi-x-lg ms-2 text-secondary mioRettangolo"
             viewBox="0 0 16 16"
+            onclick="togliDiv()"
           >
             <path
               d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
@@ -87,7 +94,7 @@
         </div>
       </div>
       <div class="nav nav-pills flex-column mb-auto">
-        <div class="d-flex mt-5 text-secondary">
+        <div class="d-flex mt-5 text-secondary" id="f1">
           <div class="d-flex">
             <img
               src="assets/imgs/profile/download.jpg"
@@ -123,7 +130,7 @@
             <p style="font-size: 0.9em">4 ore</p>
           </div>
         </div>
-        <div class="d-flex mt-5 text-secondary">
+        <div class="d-flex mt-5 text-secondary" id="f2">
           <div class="d-flex">
             <img
               src="assets/imgs/profile/images.jpg"
@@ -159,7 +166,7 @@
             <p style="font-size: 0.9em">8 ore</p>
           </div>
         </div>
-        <div class="d-flex mt-5 text-secondary">
+        <div class="d-flex mt-5 text-secondary" id="f3">
           <div class="d-flex">
             <img
               src="assets/imgs/profile/images 3.jpg"
@@ -196,6 +203,79 @@
             <p style="font-size: 0.9em">3 giorni</p>
           </div>
         </div>
+        <div class="d-flex mt-5 text-secondary d-none" id="nuovoF1">
+          <div class="d-flex">
+            <img
+              src="assets/imgs/profile/images 4.jpg"
+              alt=""
+              class="rounded-circle"
+              style="width: 3em; height: 3em"
+            />
+          </div>
+          <div class="d-flex flex-column ms-3">
+            <h6 class="fs-6 text-white">David Ghallagher</h6>
+            <p style="font-size: 0.9em">Invisible-Flevans</p>
+
+            <div class="d-flex mt-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-music-note-beamed me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13c0-1.104 1.12-2 2.5-2s2.5.896 2.5 2zm9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2z"
+                />
+                <path fill-rule="evenodd" d="M14 11V2h1v9h-1zM6 3v10H5V3h1z" />
+                <path
+                  d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4V2.905z"
+                />
+              </svg>
+              <p style="font-size: 0.9em">DiRTY RADio</p>
+            </div>
+          </div>
+          <div class="ms-5">
+            <p style="font-size: 0.9em">4 giorni</p>
+          </div>
+        </div>
+        <div class="d-flex mt-5 text-secondary d-none" id="nuovoF2">
+          <div class="d-flex">
+            <img
+              src="assets/imgs/profile/images 5.jpg"
+              alt=""
+              class="rounded-circle"
+              style="width: 3em; height: 3em"
+            />
+          </div>
+          <div class="d-flex flex-column ms-3">
+            <h6 class="fs-6 text-white">Anita Bellingham</h6>
+            <p style="font-size: 0.9em">My Life-Lil Wayne</p>
+
+            <div class="d-flex mt-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-disc me-2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 4a4 4 0 0 0-4 4 .5.5 0 0 1-1 0 5 5 0 0 1 5-5 .5.5 0 0 1 0 1zm4.5 3.5a.5.5 0 0 1 .5.5 5 5 0 0 1-5 5 .5.5 0 0 1 0-1 4 4 0 0 0 4-4 .5.5 0 0 1 .5-.5z"
+                />
+              </svg>
+              <p style="font-size: 0.9em">LAX(Deluxe)</p>
+            </div>
+          </div>
+          <div class="ms-5">
+            <p style="font-size: 0.9em">4 giorni</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -204,5 +284,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="mattia.sidebar.js"></script>
   </body>
 </html>
