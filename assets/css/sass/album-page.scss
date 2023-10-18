@@ -1,3 +1,4 @@
+@import "scss/bootstrap";
 $light: #fbfbfb;
 $dark1: #202020;
 $dark2: #131313;
@@ -12,6 +13,15 @@ body {
   background-color: $dark1;
   font-family: "Circular";
 }
+//CSS LEFTBAR
+#playlist {
+  height: 65vh;
+  overflow: auto;
+}
+#left-side-bar {
+  color: rgba(169, 169, 169);
+}
+//FINE CSS LEFTBAR
 
 #avatar {
   width: 1.6rem;
