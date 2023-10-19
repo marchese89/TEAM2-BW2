@@ -104,6 +104,7 @@ body {
   background-color: $dark1;
   height: 99vh;
   overflow: auto;
+  overflow-x: hidden;
   margin-left: 0;
   margin-right: 0;
   display: contents;

@@ -87,6 +87,7 @@ body {
   background-color: #202020;
   height: 99vh;
   overflow: auto;
+  overflow-x: hidden;
   margin-left: 0;
   margin-right: 0;
   display: contents;
@@ -501,6 +502,31 @@ ol {
 
 h3 {
   font-size: 0.8em;
+}
+
+#witdh-img {
+  min-width: 50px !important;
+}
+
+#shuffle-custom {
+  font-size: 40px;
+}
+
+#footer-bar {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  height: 6rem;
+  width: 100vw;
+  bottom: 0px;
+}
+
+.addImage {
+  width: 50px;
+  height: 50px;
+}
+
+.witdh-image1 {
+  min-width: 60px;
 }
 
 body {

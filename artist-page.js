@@ -66,10 +66,10 @@ const generateTrackDetails = function (arrayOfTracks) {
     newLi.classList.add = "text-secondary";
     newLi.innerHTML = `
                     <div class="row d-flex align-items-center">
-                      <div class="col-1 px-0 justify-content-end d-flex">
+                      <div class="col-1 px-0 justify-content-center d-flex">
                       ${i + 1}
                       </div>
-                      <div class="col-1">
+                      <div id="witdh-img" class="col-1 pe-0">
                         <img
                           src="${element.album.cover_small}"
                           alt=""
@@ -77,13 +77,13 @@ const generateTrackDetails = function (arrayOfTracks) {
                           style="width: 40px"
                         />
                       </div>
-                      <div class="flex-col flex-lg-row w-25">
+                      <div class="flex-grow-1 d-lg-flex flex-col flex-lg-row w-25">
 
-                      <div class="col col-8 col-lg-4 text-white ms-0 ms-lg-3">
-                        <h5 class="fs-7 m-auto text-start">${element.title}</h5>
+                      <div class="col col-8 flex-grow-1 col-lg-4 text-white ms-0">
+                        <h5 class="fs-7 text-start">${element.title}</h5>
                       </div> 
                       <div class="col col-3 text-secondary">
-                        <p class="fs-7 m-auto text-center">${aggiungiPuntini(
+                        <p class="fs-7 text-start">${aggiungiPuntini(
                           element.rank
                         )}</p>
                       </div>
@@ -100,7 +100,41 @@ const generateTrackDetails = function (arrayOfTracks) {
     `;
 
     track.appendChild(newLi);
+
+    // const innmage = getElementById("innmage");
+    // const addImage = document.createElement("div");
+    // addImage.classList.add = ("col", "col-3");
+    // addImage.innerHTML = `
+    // <img src="${element.album.cover_small}" class="rounded-circle" alt="" style="width: 50px" />
+
+    // `;
+
+    //innmage.appendChild(addImage);
   });
+};
+
+const generateInnmageDetails = function (arrayOfTracks) {
+  const innmage = document.getElementById("innmage");
+  console.log("array", arrayOfTracks.data[0].album.cover_small);
+
+  const addImage = document.createElement("div");
+  addImage.classList.add("row", "my-3", "flex-nowrap");
+  addImage.innerHTML = `
+    <div class="col col-1 d-flex witdh-image1">
+    <img src="${arrayOfTracks.data[0].album.cover_small}" class="rounded-circle mx-1 addImage" alt=""/>
+    </div>
+    <div
+                    class="col col-10 d-flex flex-column justify-content-evenly"
+                  >
+                    <h5 class="text-white fs-7 m-0">
+                      Hai messo mi piace a <span>2</span> brani
+                    </h5>
+                    <p class="text-secondary fs-7 m-0">Di <span>${arrayOfTracks.data[0].artist.name}</span></p>
+                  </div>
+
+    `;
+
+  innmage.appendChild(addImage);
 };
 
 const getTrackDetails = function () {
@@ -118,6 +152,7 @@ const getTrackDetails = function () {
     })
     .then((eventTrackData) => {
       generateTrackDetails(eventTrackData);
+      generateInnmageDetails(eventTrackData);
       console.log(eventTrackData);
     })
     .catch((err) => console.log("ERRORE", err));
