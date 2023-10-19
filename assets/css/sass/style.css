@@ -30,6 +30,10 @@ body {
   justify-content: center;
 }
 
+#first-album-img:hover {
+  cursor: pointer;
+}
+
 #arr-left i {
   font-size: 1em;
   padding: 0.2em;
@@ -200,7 +204,7 @@ body {
 }
 
 .card.big-banner {
-  height: 25rem;
+  height: 18rem;
 }
 
 .col {
@@ -519,6 +523,16 @@ body {
 #main-mobile .play-mobile i.bi-play-fill {
   position: absolute;
   left: 0.25em;
+}
+
+#search {
+  background-color: black;
+  color: white;
+  margin: 0;
+  border: 0;
+}
+#search:focus {
+  padding: 0;
 }
 
 .fs-7 {

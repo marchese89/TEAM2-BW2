@@ -28,6 +28,10 @@ function firtsAlbum(data) {
   artist.innerText = data.artist.name;
   const slogan = document.querySelector("#slogan span");
   slogan.innerText = data.artist.name;
+  const imgFirstAlbum = document.getElementById("first-album-img");
+  imgFirstAlbum.addEventListener("click", function () {
+    location.href = `album-page.html?albumId=${data.album.id}`;
+  });
 }
 
 function sixAlbums(data, e_random) {
@@ -35,10 +39,16 @@ function sixAlbums(data, e_random) {
   used.push(e_random);
   for (let i = 1; i <= 6; i++) {
     const elem = document.getElementById(`album${i}`);
+    const imgAlbum = elem.querySelector("img");
+    imgAlbum.style.cursor = "pointer";
+
     let random = Math.floor(Math.random() * 25);
     while (used.includes(data[random].album.id)) {
       random = Math.floor(Math.random() * 25);
     }
+    imgAlbum.addEventListener("click", function () {
+      location.href = `album-page.html?albumId=${data[random].album.id}`;
+    });
     used.push(data[random].album.id);
     const img = elem.querySelector("div img");
     img.setAttribute("src", data[random].album.cover);
@@ -93,7 +103,7 @@ loadAlbums("rock");
 
 function mainAlbums(data) {
   const mainAlbums = document.getElementById("main-albums");
-
+  mainAlbums.innerHTML = "";
   data.forEach((d, i) => {
     if (i == 0 || i == 1) {
       const elem = document.getElementById(`big-album-${i}`);
@@ -107,7 +117,7 @@ function mainAlbums(data) {
     newCol.innerHTML = `
     <div class="card big-banner">
                   <div>
-                    <img src="${d.album.cover_xl}" alt="" class="w-100" />
+                    <img src="${d.album.cover_xl}" alt="" class="w-100" onclick="goToAlbum('${d.album.id}')"/>
                   </div>
                   <div>
                     <h6 class="mt-3">${d.album.title}</h6>
@@ -118,3 +128,29 @@ function mainAlbums(data) {
     mainAlbums.appendChild(newCol);
   });
 }
+
+function goToAlbum(id) {
+  location.href = `album-page.html?albumId=${id}`;
+}
+
+const _search = document.getElementById("search");
+_search.addEventListener("keypress", function (event) {
+  const searchQuery = _search.value;
+
+  if (event.key === "Enter" && searchQuery.length > 0) {
+    // event.preventDefault();
+    // document.getElementById("myBtn").click();
+    console.log("INVIO");
+    const stAllbum = document.getElementById("first-album");
+    stAllbum.classList.add("d-none");
+    console.log(stAllbum);
+    const bs = document.getElementById("bs");
+    bs.classList.add("d-none");
+    const sixAlbums = document.getElementById("six-albums");
+    sixAlbums.classList.add("d-none");
+    const altro = document.getElementById("altro");
+    altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
+    console.log("sono arrivato qui");
+    loadAlbums(searchQuery);
+  }
+});
