@@ -39,10 +39,12 @@ body {
 
 #top {
   justify-content: center;
-  // align-items: center;
-  // position: fixed;
-  // align-items: top;
-  // top: 1em;
+}
+
+#first-album-img {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 #arr-left i {
@@ -219,7 +221,7 @@ body {
   }
 }
 .card.big-banner {
-  height: 25rem;
+  height: 18rem;
 }
 
 .col {
@@ -544,5 +546,14 @@ body {
       position: absolute;
       left: 0.25em;
     }
+  }
+}
+#search {
+  background-color: black;
+  color: white;
+  margin: 0;
+  border: 0;
+  &:focus {
+    padding: 0;
   }
 }
