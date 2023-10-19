@@ -118,7 +118,20 @@ const renderAlbum = function (data) {
   divDescr.appendChild(divHidden);
   //   renderBg(data.cover);
 };
+function aggiungiPuntini(numero) {
+  // Converte il numero in una stringa
+  var numeroStringa = numero.toString();
 
+  // Dividi la stringa in gruppi di tre cifre da destra a sinistra
+  var gruppi = [];
+  while (numeroStringa.length > 0) {
+    gruppi.unshift(numeroStringa.slice(-3));
+    numeroStringa = numeroStringa.slice(0, -3);
+  }
+
+  // Unisci i gruppi con i puntini
+  return gruppi.join(".");
+}
 const renderList = function (data) {
   const track = data.tracks.data;
   console.log(track);
@@ -129,6 +142,8 @@ const renderList = function (data) {
     const divRow = document.createElement("div");
     divRow.classList.add("row", "align-items-center");
     divRow.setAttribute("id", "rigaTrack");
+    const rankPuntato = element.rank;
+
     divRow.innerHTML = `<div class="col-auto text-start me-2 "><span>${
       index + 1
     }<i class="bi bi-play-fill text-white hidden"></i></span>
@@ -143,7 +158,9 @@ const renderList = function (data) {
                           }">${element.artist.name}</a></div>
                          </div>
                        </div>
-                 <div class="col-2 me-auto text-end ripr">${element.rank}</div>
+                 <div class="col-2 me-auto text-end ripr">${aggiungiPuntini(
+                   rankPuntato
+                 )}</div>
                  <div class="col-auto heart"><i class="bi bi-heart text-white hidden"></i></div>
                  <div class="col-auto" id="secHidden">${totSec}</div>
                  <div class="col-auto trep"><i class="bi bi-three-dots text-white hidden"></i></div>
