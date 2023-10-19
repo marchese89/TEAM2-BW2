@@ -118,13 +118,13 @@ const generateInnmageDetails = function (arrayOfTracks) {
   console.log("array", arrayOfTracks.data[0].album.cover_small);
 
   const addImage = document.createElement("div");
-  addImage.classList.add("row", "my-3");
+  addImage.classList.add("row", "my-3", "flex-nowrap");
   addImage.innerHTML = `
-    <div class="col col-3 d-flex">
+    <div class="col col-1 d-flex witdh-image1">
     <img src="${arrayOfTracks.data[0].album.cover_small}" class="rounded-circle mx-1 addImage" alt=""/>
     </div>
     <div
-                    class="col col-9 d-flex flex-column justify-content-evenly"
+                    class="col col-10 d-flex flex-column justify-content-evenly"
                   >
                     <h5 class="text-white fs-7 m-0">
                       Hai messo mi piace a <span>2</span> brani
