@@ -90,6 +90,7 @@ body {
   margin-left: 0;
   margin-right: 0;
   display: contents;
+  padding: 0 !important;
 }
 
 @media (min-width: 992px) {
@@ -97,6 +98,7 @@ body {
     display: flex;
     margin-left: 20em;
     margin-right: 20em;
+    padding: 0 !important;
   }
 }
 #first-album {
@@ -501,6 +503,27 @@ ol {
 
 h3 {
   font-size: 0.8em;
+}
+
+#witdh-img {
+  min-width: 50px !important;
+}
+
+#shuffle-custom {
+  font-size: 40px;
+}
+
+#footer-bar {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 6rem;
+  width: 100vw;
+  bottom: 0px;
+}
+
+.addImage {
+  width: 50px;
+  height: 50px;
 }
 
 body {

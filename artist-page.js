@@ -101,16 +101,40 @@ const generateTrackDetails = function (arrayOfTracks) {
 
     track.appendChild(newLi);
 
-    const innmage = getElementById("innmage");
-    const addImage = document.createElement("div");
-    addImage.classList.add = ("col", "col-3");
-    addImage.innerHTML = `
-    <img src="${element.album.cover_small}" class="rounded-circle" alt="" style="width: 50px" />
-    
+    // const innmage = getElementById("innmage");
+    // const addImage = document.createElement("div");
+    // addImage.classList.add = ("col", "col-3");
+    // addImage.innerHTML = `
+    // <img src="${element.album.cover_small}" class="rounded-circle" alt="" style="width: 50px" />
+
+    // `;
+
+    //innmage.appendChild(addImage);
+  });
+};
+
+const generateInnmageDetails = function (arrayOfTracks) {
+  const innmage = document.getElementById("innmage");
+  console.log("array", arrayOfTracks.data[0].album.cover_small);
+
+  const addImage = document.createElement("div");
+  addImage.classList.add("row", "my-3");
+  addImage.innerHTML = `
+    <div class="col col-3 d-flex">
+    <img src="${arrayOfTracks.data[0].album.cover_small}" class="rounded-circle mx-1 addImage" alt=""/>
+    </div>
+    <div
+                    class="col col-9 d-flex flex-column justify-content-evenly"
+                  >
+                    <h5 class="text-white fs-7 m-0">
+                      Hai messo mi piace a <span>2</span> brani
+                    </h5>
+                    <p class="text-secondary fs-7 m-0">Di <span>${arrayOfTracks.data[0].artist.name}</span></p>
+                  </div>
+
     `;
 
-    innmage.appendChild(addImage);
-  });
+  innmage.appendChild(addImage);
 };
 
 const getTrackDetails = function () {
@@ -128,6 +152,7 @@ const getTrackDetails = function () {
     })
     .then((eventTrackData) => {
       generateTrackDetails(eventTrackData);
+      generateInnmageDetails(eventTrackData);
       console.log(eventTrackData);
     })
     .catch((err) => console.log("ERRORE", err));
