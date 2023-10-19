@@ -45,8 +45,31 @@ function sixAlbums(data, e_random) {
     const search = elem.querySelector("p");
     search.innerText = data[random].album.title;
   }
+  for (let i = 1; i <= 6; i++) {
+    const elem = document.getElementById(`album-mobile-${i}`);
+    let random = Math.floor(Math.random() * 25);
+    while (used.includes(data[random].album.id)) {
+      random = Math.floor(Math.random() * 25);
+    }
+    used.push(data[random].album.id);
+    const img = elem.querySelector("div img");
+    img.setAttribute("src", data[random].album.cover);
+    const search = elem.querySelector("p");
+    search.innerText = reduceText(data[random].album.title, 13);
+  }
   console.log(used);
   return used;
+}
+
+function reduceText(testo, lunghezzaMassima) {
+  // Verifica se la lunghezza del testo supera quella massima
+  if (testo.length > lunghezzaMassima) {
+    // Accorcia il testo e aggiunge puntini alla fine
+    return testo.slice(0, lunghezzaMassima) + "...";
+  } else {
+    // Restituisci il testo inalterato se non supera la lunghezza massima
+    return testo;
+  }
 }
 
 async function loadAlbums(query) {
@@ -71,7 +94,14 @@ loadAlbums("rock");
 function mainAlbums(data) {
   const mainAlbums = document.getElementById("main-albums");
 
-  data.forEach((d) => {
+  data.forEach((d, i) => {
+    if (i == 0 || i == 1) {
+      const elem = document.getElementById(`big-album-${i}`);
+      const img = elem.querySelector("img");
+      img.setAttribute("src", d.album.cover);
+      const title = elem.querySelector("h6");
+      title.innerText = d.album.title;
+    }
     const newCol = document.createElement("div");
     newCol.classList.add("col", "out-banner");
     newCol.innerHTML = `

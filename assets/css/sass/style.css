@@ -471,6 +471,55 @@ body {
   color: white !important;
 }
 
+#dot {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  background-color: #4486d9;
+  top: 0.05em;
+  left: 0.05em;
+  border-radius: 50%;
+  border: 2px solid #202020;
+}
+
+#main-mobile {
+  background-color: transparent !important;
+}
+#main-mobile img {
+  height: 50px;
+}
+#main-mobile .big-banner {
+  background-color: #242424 !important;
+  border-radius: 7px !important;
+  height: 13rem;
+  width: 100%;
+}
+#main-mobile .big-banner img {
+  height: 9em;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+#main-mobile .col-12.out-banner {
+  background-color: transparent !important;
+}
+#main-mobile .bi-heart-fill {
+  color: #1cd861;
+}
+#main-mobile .play-mobile {
+  background-color: #1b1b1b;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  position: relative;
+}
+#main-mobile .play-mobile:hover {
+  cursor: pointer;
+}
+#main-mobile .play-mobile i.bi-play-fill {
+  position: absolute;
+  left: 0.25em;
+}
+
 .fs-7 {
   font-size: 0.8em;
 }
