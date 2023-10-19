@@ -56,27 +56,19 @@ body {
   overflow: auto;
 }
 
-#center-bar {
-  width: 100%;
-  margin-bottom: 1em;
-}
-
-#main {
+#mainAlbum {
   margin-top: 0 !important;
   background-color: #202020;
   height: 99vh;
-  overflow: auto;
   margin-left: 0;
   margin-right: 0;
-  display: contents;
 }
 
 @media (min-width: 992px) {
-  #main {
+  #mainAlbum {
     display: flex;
     margin-left: 20em;
     margin-right: 20em;
-    overflow-x: hidden;
   }
 }
 #provacolore {
@@ -167,7 +159,6 @@ h1 {
   font-size: 3rem; /* Dimensione iniziale per schermi 2K */
   font-weight: 800;
   margin-bottom: 3rem;
-  /* Aggiungi ulteriori media query secondo le esigenze fino al breakpoint per smartphone */
 }
 
 #artistImg {
@@ -354,6 +345,32 @@ h5 {
   }
 }
 
+@media (max-width: 1400px) {
+  #cover-img img {
+    width: 11.1rem;
+    height: 11.1rem;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 993px) {
+  #mainAlbum {
+    overflow: auto;
+  }
+}
+@media (max-width: 1200px) {
+  #cover-img img {
+    width: 10.1rem;
+    height: 10.1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  #sottoTitolo {
+    font-size: 0.8rem;
+  }
+}
 @media (max-width: 992px) {
   #cover-img img {
     width: 10.1rem;
@@ -362,8 +379,100 @@ h5 {
   h1 {
     font-size: 1.8rem;
   }
-  #left-side-bar {
-    width: 15em;
+  #top {
+    display: none !important;
+  }
+  #player {
+    display: none !important;
+  }
+  #left {
+    display: none;
+  }
+  #div-Album {
+    flex-direction: column;
+    align-items: end;
+  }
+  .row.primaR {
+    display: none;
+  }
+  #cover-img {
+    margin-bottom: 1rem;
+  }
+  #cover-img img {
+    width: 16.1rem;
+    height: 16.1rem;
+  }
+  #type {
+    display: none;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  #duration {
+    display: none;
+  }
+  #album-description {
+    align-self: self-start;
+    margin-left: 0 !important;
+    position: static;
+  }
+  #divArtist {
+    position: static !important;
+  }
+  #dataBrano {
+    display: none;
+  }
+  #divHidden {
+    display: inline-block !important;
+    margin-top: 0.6rem;
+    color: rgb(169, 169, 169);
+  }
+  #songList {
+    background: rgb(192, 171, 70);
+    background: linear-gradient(180deg, rgb(192, 171, 70) -103%, rgb(32, 32, 32) 17%);
+    border-top: none;
+  }
+  .row.primaR {
+    display: none;
+  }
+  #playGreen {
+    order: 5;
+  }
+  #threeDots {
+    display: inline-block;
+    margin-right: auto;
+  }
+  #dotsDrop {
+    display: none;
+  }
+  #shuffleIcon {
+    display: inline-block;
+  }
+  #finePagina {
+    display: none;
+  }
+  #album {
+    position: relative;
+  }
+  #divArrowBack {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    margin-left: 1rem;
+  }
+  #secHidden {
+    display: none;
+  }
+  #trepH {
+    display: inline-block;
+  }
+  .trep {
+    display: none;
+  }
+  body {
+    margin-bottom: 130px;
   }
 }
 @media (max-width: 768px) {
@@ -462,41 +571,6 @@ h5 {
   body {
     margin-bottom: 130px;
   }
-  .nav-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0.9; /* Sostituisci con il tuo colore di sfondo desiderato */
-  }
-  .nav-bar {
-    display: flex;
-    justify-content: space-around; /* Spazio uniforme tra gli elementi */
-    align-items: center;
-    padding: 30px; /* Aggiungi spazio interno per il layout */
-  }
-  .nav-item {
-    text-align: center;
-  }
-  .nav-link {
-    text-decoration: none;
-    color: white; /* Sostituisci con il tuo colore del testo desiderato */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .nav-link i {
-    margin-bottom: 5px;
-    color: white; /* Aggiunge spazio tra l'icona e il testo */
-    font-size: 1.5rem;
-  }
-  #navMobile {
-    display: inline-block;
-  }
-  #center-bar {
-    overflow: visible;
-    overflow-x: hidden;
-  }
 }
 @media (max-width: 576px) {
   #top {
@@ -580,10 +654,6 @@ h5 {
   }
   body {
     margin-bottom: 130px;
-  }
-  #main {
-    overflow: visible;
-    overflow-x: hidden !important;
   }
   #player {
     display: none !important;
