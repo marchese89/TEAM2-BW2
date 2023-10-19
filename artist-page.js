@@ -94,7 +94,7 @@ const generateTrackDetails = function (arrayOfTracks) {
                         )}</p>
                       </div>
                       <div class="col d-lg-none d-flex flex-grow-1 flex-row-reverse">
-                        <i class="bi bi-three-dots-vertical"></i>
+                        <i class="bi bi-three-dots-vertical text-secondary hover"></i>
                       </div>
                     </div>
     `;
