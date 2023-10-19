@@ -592,6 +592,22 @@ h3 {
   min-width: 60px;
 }
 
+@media (max-width: 991.98px) {
+  #player {
+    border-radius: 15px;
+    height: 4.5rem;
+    width: 98%;
+  }
+  #player h6 {
+    font-size: large;
+  }
+  #player i {
+    font-size: 2.5em;
+  }
+  #footer-bar i {
+    font-size: 2.5em;
+  }
+}
 body {
   font-family: "Circular", Times, serif !important;
 }
