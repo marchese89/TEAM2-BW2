@@ -63,7 +63,7 @@ const generateTrackDetails = function (arrayOfTracks) {
   console.log(arrayOfTracks);
   arrayOfTracks.data.forEach((element, i) => {
     const newLi = document.createElement("li");
-    newLi.classList.add = "text-secondary";
+    newLi.classList.add("text-secondary", "my-2");
     newLi.innerHTML = `
                     <div class="row d-flex align-items-center">
                       <div class="col-1 px-0 justify-content-center d-flex">
@@ -79,11 +79,11 @@ const generateTrackDetails = function (arrayOfTracks) {
                       </div>
                       <div class="flex-grow-1 d-lg-flex flex-col flex-lg-row w-25">
 
-                      <div class="col col-8 flex-grow-1 col-lg-4 text-white ms-0">
-                        <h5 class="fs-7 text-start">${element.title}</h5>
+                      <div class="col col-8 flex-grow-1 col-lg-4 text-white ms-0 d-flex align-items-center">
+                        <h5 class="fs-7 text-start m-0">${element.title}</h5>
                       </div> 
-                      <div class="col col-3 text-secondary">
-                        <p class="fs-7 text-start">${aggiungiPuntini(
+                      <div class="col col-3 text-secondary d-flex align-items-center">
+                        <p class="fs-7 text-start m-0">${aggiungiPuntini(
                           element.rank
                         )}</p>
                       </div>
