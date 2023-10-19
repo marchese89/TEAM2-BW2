@@ -66,10 +66,10 @@ const generateTrackDetails = function (arrayOfTracks) {
     newLi.classList.add = "text-secondary";
     newLi.innerHTML = `
                     <div class="row d-flex align-items-center">
-                      <div class="col-1 px-0 justify-content-end d-flex">
+                      <div class="col-1 px-0 justify-content-center d-flex">
                       ${i + 1}
                       </div>
-                      <div class="col-1">
+                      <div id="witdh-img" class="col-1 pe-0">
                         <img
                           src="${element.album.cover_small}"
                           alt=""
@@ -77,13 +77,13 @@ const generateTrackDetails = function (arrayOfTracks) {
                           style="width: 40px"
                         />
                       </div>
-                      <div class="d-flex flex-col flex-lg-row w-25">
+                      <div class="flex-grow-1 d-lg-flex flex-col flex-lg-row w-25">
 
-                      <div class="col col-8 col-lg-4 text-white ms-0">
+                      <div class="col col-8 flex-grow-1 col-lg-4 text-white ms-0">
                         <h5 class="fs-7 text-start">${element.title}</h5>
                       </div> 
                       <div class="col col-3 text-secondary">
-                        <p class="fs-7 text-center">${aggiungiPuntini(
+                        <p class="fs-7 text-start">${aggiungiPuntini(
                           element.rank
                         )}</p>
                       </div>
@@ -100,6 +100,16 @@ const generateTrackDetails = function (arrayOfTracks) {
     `;
 
     track.appendChild(newLi);
+
+    const innmage = getElementById("innmage");
+    const addImage = document.createElement("div");
+    addImage.classList.add = ("col", "col-3");
+    addImage.innerHTML = `
+    <img src="${element.album.cover_small}" class="rounded-circle" alt="" style="width: 50px" />
+    
+    `;
+
+    innmage.appendChild(addImage);
   });
 };
 

@@ -28,3 +28,20 @@ ol {
 h3 {
   font-size: 0.8em;
 }
+
+#witdh-img {
+  min-width: 50px !important;
+}
+
+#shuffle-custom {
+  font-size: 40px;
+}
+
+#footer-bar {
+    background-color: black;
+    opacity: 50%;
+    position: fixed;
+    height: 6rem;
+    width: 100vw;
+    bottom: 0px;
+  }
