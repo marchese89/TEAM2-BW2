@@ -1,0 +1,411 @@
+body {
+  background-color: #202020 !important;
+  font-family: "Circular";
+}
+
+#navMobile {
+  display: none;
+}
+
+#left {
+  background-color: black;
+  color: white;
+  width: 30em;
+  height: 100vh;
+  height: 86.5vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20em;
+}
+
+#left I {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  z-index: 3;
+}
+
+#left p {
+  margin-bottom: 0px;
+}
+
+#left div div.row {
+  width: 100%;
+}
+
+#playlist {
+  height: 38.5vh;
+  overflow: auto;
+}
+
+#navbarNav {
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#right {
+  width: 20em;
+  height: 86.5vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: auto;
+}
+
+#center-bar {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#main {
+  margin-top: 0 !important;
+  background-color: #202020;
+  height: 99vh;
+  overflow: auto;
+  margin-left: 0;
+  margin-right: 0;
+  display: contents;
+}
+
+@media (min-width: 992px) {
+  #main {
+    display: flex;
+    margin-left: 20em;
+    margin-right: 20em;
+  }
+}
+#provacolore {
+  background: rgb(32, 32, 32);
+  background: linear-gradient(0deg, rgb(32, 32, 32) -20%, rgb(192, 171, 70) 120%);
+}
+
+#avatar {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #avatar {
+    display: block;
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    margin-right: 1em;
+  }
+  #avatar i {
+    color: #fbfbfb;
+    padding-right: 0.5em;
+    margin-left: 0.5em;
+  }
+  #avatar img {
+    width: 2rem;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    padding: 0.2em;
+  }
+}
+#top {
+  justify-content: center;
+}
+
+#arr-left i {
+  font-size: 1em;
+  padding: 0.2em;
+  cursor: pointer;
+  margin-right: 0.2em;
+}
+
+#arr-right i {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #arr-right i {
+    display: block;
+    font-size: 1em;
+    padding: 0.2em;
+    cursor: pointer;
+    margin-left: 0.1em;
+  }
+}
+#arrows {
+  color: #fbfbfb;
+  display: flex;
+}
+
+#arr-left {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #131313;
+  position: relative;
+  margin-right: 1em;
+}
+
+#arr-right {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #arr-right {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: #131313;
+    position: relative;
+  }
+}
+#album-description p,
+h1 {
+  color: white;
+}
+
+h1 {
+  font-size: 3rem; /* Dimensione iniziale per schermi 2K */
+  font-weight: 800;
+  margin-bottom: 3rem;
+  /* Aggiungi ulteriori media query secondo le esigenze fino al breakpoint per smartphone */
+}
+
+#artistImg {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+
+#cover-img img {
+  width: 13rem;
+  height: 13rem;
+  transition: transform 0.3s;
+}
+
+#cover-img:hover img {
+  transform: scale(1.02);
+}
+
+#divArrowBack {
+  display: none;
+}
+
+#cover-img {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+#album-description p {
+  margin-bottom: 0.5rem;
+}
+
+#album-description {
+  position: relative;
+}
+
+#divArtist {
+  position: absolute;
+  bottom: 0;
+}
+
+#divArtist p {
+  margin-bottom: 0;
+}
+
+#divHidden {
+  display: none !important;
+}
+
+#duration,
+#trackList {
+  color: rgb(169, 169, 169);
+  opacity: 0.7;
+}
+
+#playGreen {
+  font-size: 26px;
+  color: #1ed760;
+  transition: transform 0.3s;
+  border: 0;
+}
+
+#playGreen:hover {
+  transform: scale(1.1);
+}
+
+#arrowBack {
+  font-size: 25px;
+  color: white;
+}
+
+#likeHeart,
+#downloadIcon,
+#dotsDrop,
+#threeDots,
+#shuffleIcon {
+  font-size: 28px;
+  color: rgb(170, 168, 168);
+  transition: transform 0.3s;
+  border: 0;
+}
+
+#threeDots {
+  display: none;
+}
+
+#shuffleIcon {
+  display: none;
+}
+
+#trepH {
+  display: none;
+}
+
+#likeHeart:hover,
+#downloadIcon:hover,
+#dotsDrop:hover {
+  transform: scale(1.1);
+}
+
+#songList {
+  background: rgb(192, 171, 70);
+  background: linear-gradient(180deg, rgb(192, 171, 70) -60%, rgb(32, 32, 32) 17%);
+  border-top: 1px solid rgb(32, 32, 32);
+}
+
+#trackList {
+  padding: 1rem 2.5rem;
+}
+
+#trackList .primaR {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.2);
+  padding-bottom: 0.6rem;
+}
+
+#trackList .row {
+  padding-top: 0.6rem;
+}
+
+#trackList p {
+  margin: 0;
+}
+
+#rigaTrack:hover {
+  background-color: rgba(169, 169, 169, 0.2);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card {
+  width: 180px;
+  background-color: #222222;
+  border: 1px solid;
+  margin: 10px;
+  display: inline-block;
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+.card:hover {
+  transform: scale(1);
+  background-color: #2c2c2c;
+}
+
+.linkArtist {
+  text-decoration: none;
+  color: rgb(169, 169, 169);
+}
+
+.linkArtist:hover {
+  text-decoration: underline;
+}
+
+#titoloAlbumCorrelati h4 {
+  color: white;
+}
+
+#titoloAlbumCorrelati a {
+  text-decoration: none;
+  color: rgb(169, 169, 169);
+}
+
+#titoloAlbumCorrelati a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .ripr {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .colMargin {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  #right-side-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #arr-left,
+  #arr-right,
+  #btn-avatar,
+  #type {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #divAlbum {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+  }
+  .nav-item {
+    text-align: center;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-link i {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1.5rem;
+  }
+  #navMobile {
+    display: inline-block;
+  }
+}/*# sourceMappingURL=album-page.css.map */
