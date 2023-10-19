@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row mt-2">
+      <div class="row">
         <div id="left-side-bar" class="col col-3">
           <!-- sidebar sinistra -->
 
@@ -52,24 +52,21 @@
           <!-- fine navbar -->
           <div class="nav container-fluid ms-1 mt-4" id="navBarIcon">
             <div class="column">
-              <div class="nav-item align-text-middle">
+              <div class="nav-item align-text-middle" id="newPlaylistIcon">
                 <a class="nav-link" href="#"
-                  ><i class="bi bi-plus" id="newPlaylistIcon"></i>New
-                  playlist</a
+                  ><i class="bi bi-plus"></i>New playlist</a
                 >
               </div>
-              <div class="nav-item mb-1">
+              <div class="nav-item mb-1" id="likedSongIcon">
                 <a class="nav-link" href="#"
                   ><img
                     src="assets/imgs/artworks-y6qitUuZoS6y8LQo-5s2pPA-t500x500.jpg"
-                    id="likedSongIcon"
                   />Songs you like</a
                 >
               </div>
-              <div class="nav-item mb-3">
+              <div class="nav-item mb-3" id="yourPodcastIcon">
                 <a class="nav-link" href="#"
-                  ><i class="bi bi-bookmark-fill" id="yourPodcastIcon"></i>Your
-                  podcasts</a
+                  ><i class="bi bi-bookmark-fill"></i>Your podcasts</a
                 >
               </div>
             </div>
@@ -124,8 +121,37 @@
             </div>
           </div>
         </div>
+        <!--INIZIO NAV MOBILE-->
 
-        <div id="center-bar" class="col col-7 p-0">
+        <div class="nav-container" id="navMobile">
+          <div class="nav-bar">
+            <div class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="home-page.html"
+              >
+                <i class="bi bi-house-door-fill"></i>
+                Home
+              </a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-search"></i>
+                Search
+              </a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-collection"></i>
+                Your Library
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--FINE NAV MOBILE-->
+
+        <div id="center-bar" class="col col p-0">
           <div class="custom-scrollbar">
             <!--BARRA SUPERIORE-->
             <div id="provacolore">
@@ -218,10 +244,16 @@
               <div id="album">
                 <div class="container-fluid p-4">
                   <div class="d-flex align-items-end" id="div-Album">
-                    <div class="p-0" id="cover-img"></div>
-                    <div class="p-0 ms-4 flex-fill" id="album-description">
-                      <div class="d-flex flex-row" id="divArtist"></div>
+                    <div id="divArrowBack">
+                      <button type="button" class="btn">
+                        <i class="bi bi-arrow-left" id="arrowBack"></i>
+                      </button>
                     </div>
+                    <div class="p-0 mx-auto" id="cover-img"></div>
+                    <div
+                      class="p-0 ms-4 flex-fill"
+                      id="album-description"
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -238,6 +270,9 @@
                 </button>
                 <button type="button" class="btn" id="downloadIcon">
                   <i class="bi bi-arrow-down-circle"></i>
+                </button>
+                <button type="button" class="btn" id="threeDots">
+                  <i class="bi bi-three-dots-vertical"></i>
                 </button>
                 <div class="dropdown align-self-center">
                   <button
@@ -284,6 +319,9 @@
                     </li>
                   </ul>
                 </div>
+                <button type="button" class="btn" id="shuffleIcon">
+                  <i class="bi bi-shuffle"></i>
+                </button>
               </div>
               <!--FINE BARRA PLAY-->
               <div class="container-fluid" id="trackList">
@@ -306,7 +344,7 @@
               </div>
 
               <!--ALBUM CORRELATI-->
-              <div class="container">
+              <div class="container" id="finePagina">
                 <div class="container">
                   <div
                     class="d-flex justify-content-between"
@@ -343,7 +381,7 @@
             </div>
           </nav>
           <!--FINE NAVBAR-->
-          <div class="container">
+          <div class="container-fluid">
             <div class="row align-items-start mt-4" id="dattagliFriend">
               <div class="col-3">
                 <img
@@ -351,7 +389,7 @@
                   class="profileImg img-fluid"
                 />
               </div>
-              <div class="col-7" id="dattagliFriend">
+              <div class="col-7 ps-0" id="dattagliFriend">
                 <div class="row">
                   <div class="col-12"><h6>Charlie Hookham</h6></div>
                   <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
@@ -361,18 +399,18 @@
                   </div>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2 p-0">
                 <p>4 ore</p>
               </div>
             </div>
-            <div class="row align-items-start mt-5" id="dattagliFriend">
+            <div class="row align-items-start mt-4" id="dattagliFriend">
               <div class="col-3">
                 <img
                   src="assets/imgs/profile/images 3.jpg"
                   class="profileImg img-fluid"
                 />
               </div>
-              <div class="col-7" id="dattagliFriend">
+              <div class="col-7 p-0" id="dattagliFriend">
                 <div class="row">
                   <div class="col-12"><h6>Charlie Hookham</h6></div>
                   <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
@@ -382,18 +420,18 @@
                   </div>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2 p-0">
                 <p>4 ore</p>
               </div>
             </div>
-            <div class="row align-items-start mt-5" id="dattagliFriend">
+            <div class="row align-items-start mt-4" id="dattagliFriend">
               <div class="col-3">
                 <img
                   src="assets/imgs/profile/images 5.jpg"
                   class="profileImg img-fluid"
                 />
               </div>
-              <div class="col-7" id="dattagliFriend">
+              <div class="col-7 p-0" id="dattagliFriend">
                 <div class="row">
                   <div class="col-12"><h6>Charlie Hookham</h6></div>
                   <div class="col-12"><p>In Camera &middot Yumi Zouma</p></div>
@@ -403,16 +441,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2 p-0">
                 <p>4 ore</p>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div id="player" class="col"></div>
           </div>
         </div>
       </div>

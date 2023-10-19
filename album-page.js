@@ -91,7 +91,8 @@ const renderAlbum = function (data) {
   const divDescr = document.getElementById("album-description");
   const type = document.createElement("p");
   type.setAttribute("id", "type");
-  type.innerText = data.type[0].toUpperCase() + data.type.slice(1);
+  const typeVal = data.type[0].toUpperCase() + data.type.slice(1);
+  type.innerText = typeVal;
   divDescr.appendChild(type);
   const albumTitle = document.createElement("h1");
   albumTitle.innerText = data.title;
@@ -100,10 +101,21 @@ const renderAlbum = function (data) {
   const id = artist.id;
   console.log(id);
 
-  const divArtist = document.getElementById("divArtist");
+  const divArtist = document.createElement("div");
+  divArtist.setAttribute("id", "divArtist");
+  divArtist.classList.add("d-flex", "flex-row");
   divArtist.innerHTML = `<img src="${artist.picture_small}" id="artistImg" />
-  <p><a class="linkArtist text-white" href="artist-page.html?artistId="${id}>${artist.name}</a> &middot ${year} &middot ${data.nb_tracks} brani,<span id="duration"> ${totSec} </span> </p>
+  <p id="sottoTitolo"><a class="linkArtist text-white" href="artist-page.html?artistId="${id}>${artist.name}</a><span id=dataBrano> &middot ${year} &middot ${data.nb_tracks} brani,</span><span id="duration"> ${totSec} </span> </p>
   `;
+  const divHidden = document.createElement("div");
+  divHidden.setAttribute("id", "divHidden");
+  divHidden.classList.add("d-flex", "flex-row");
+  divHidden.innerHTML = `
+  <span id=spanHidden>${typeVal} &middot ${year}</span>
+  `;
+
+  divDescr.appendChild(divArtist);
+  divDescr.appendChild(divHidden);
   //   renderBg(data.cover);
 };
 
@@ -133,8 +145,9 @@ const renderList = function (data) {
                        </div>
                  <div class="col-2 me-auto text-end ripr">${element.rank}</div>
                  <div class="col-auto heart"><i class="bi bi-heart text-white hidden"></i></div>
-                 <div class="col-auto">${totSec}</div>
-                 <div class="col-auto trep"><i class="bi bi-three-dots text-white hidden"></i></div>`;
+                 <div class="col-auto" id="secHidden">${totSec}</div>
+                 <div class="col-auto trep"><i class="bi bi-three-dots text-white hidden"></i></div>
+                 <div class="col-auto" id="trepH"><i class="bi bi-three-dots-vertical text-white"></i></div>`;
     divTrack.appendChild(divRow);
 
     divRow.addEventListener("mouseover", () => {
