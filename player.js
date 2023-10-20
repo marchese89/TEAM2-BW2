@@ -12,7 +12,7 @@ const shuffle = document.querySelector(".bi-shuffle");
 const rewind = document.querySelector(".fa-undo-alt");
 const back = document.querySelector(".fa-step-backward");
 const volume = document.getElementById("volume-bar");
-let play = document.querySelector(".play");
+let play = document.querySelector(".playPause");
 let isPlaying = false;
 let currentTime = 0;
 let isFirstCall = true;
@@ -58,7 +58,7 @@ const funzione = function (trackId) {
           }
           updatePlayButtonState();
         });
-        play.addEventListener("click", function () {
+        playPause.addEventListener("click", function () {
           if (!isPlaying) {
             currentTime = 0;
             if (currentTime === 0) {
@@ -136,7 +136,7 @@ const funzione = function (trackId) {
               }
               updatePlayButtonState();
             });
-            play.addEventListener("click", function () {
+            playPause.addEventListener("click", function () {
               if (!isPlaying) {
                 if (currentTime === 0) {
                   audio.src = tracklist.data[0].preview;
@@ -199,7 +199,7 @@ const funzione = function (trackId) {
           }
           updatePlayButtonState();
         });
-        play.addEventListener("click", function () {
+        playPause.addEventListener("click", function () {
           if (!isPlaying) {
             if (currentTime === 0) {
               audio.src = album.tracks.data[0].preview;
