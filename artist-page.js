@@ -23,7 +23,7 @@ const getSingleArtistDetails = function () {
 
 function generateArtistDetails(artist) {
   const name = document.getElementById("artist-name");
-  name.innerText = artist.name;
+  name.innerText = reduceText(artist.name, 9);
   const backgroundImg = document.getElementById("background-img");
   backgroundImg.style.backgroundImage = `url(${artist.picture_xl})`;
   const ascoltatori = document.getElementById("nb_fan");
@@ -161,3 +161,39 @@ const getTrackDetails = function () {
 };
 
 getTrackDetails();
+
+const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
+frecciaDestra.style.cursor = "not-allowed";
+
+const prevPages = JSON.parse(sessionStorage.getItem("pages"));
+prevPages.artist = "artist-page.html?artistId=" + artistId;
+sessionStorage.setItem("pages", JSON.stringify(prevPages));
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.addEventListener("click", function () {
+  const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+  const p = prevPage.album;
+  location.href = p;
+});
+
+function reduceText(testo, lunghezzaMassima) {
+  // Verifica se la lunghezza del testo supera quella massima
+  if (testo.length > lunghezzaMassima) {
+    // Accorcia il testo e aggiunge puntini alla fine
+    return testo.slice(0, lunghezzaMassima) + "...";
+  } else {
+    // Restituisci il testo inalterato se non supera la lunghezza massima
+    return testo;
+  }
+}
+
+//gestione della ricerca
+const _search = document.getElementById("search");
+_search.addEventListener("keypress", function (event) {
+  const searchQuery = _search.value;
+
+  if (event.key === "Enter" && searchQuery.length > 0) {
+    sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+    location.href = "home-page.html";
+  }
+});
