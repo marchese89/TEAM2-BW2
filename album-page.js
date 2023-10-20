@@ -1,5 +1,6 @@
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get("albumId");
+const artistId = false;
 
 const generateImage = function (data) {
   let divCover = document.getElementById("cover-img");
@@ -115,14 +116,16 @@ const renderList = function (data) {
     divRow.setAttribute("id", "rigaTrack");
     const rankPuntato = element.rank;
 
-    divRow.innerHTML = `<div class="col-auto text-start me-2 "><span>${
+    divRow.innerHTML = `<div  class="col-auto text-start me-2 "><span>${
       index + 1
     }<i class="bi bi-play-fill text-white hidden"></i></span>
     
                         </div>
                        <div class="col-6 colMargin">
                          <div class="row">
-                          <div class="col-12 text-white">${element.title}</div>
+                          <div onclick="  funzione(${
+                            element.id
+                          })" class="col-12 text-white">${element.title}</div>
                           <div class="col-12">
                           <a class="linkArtist" href="artist-page.html?artistId=${
                             element.artist.id

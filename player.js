@@ -14,44 +14,173 @@ const back = document.querySelector(".fa-step-backward");
 const volume = document.getElementById("volume-bar");
 let isPlaying = false;
 let currentTime = 0;
+let isFirstCall = true;
 
-fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
-  .then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      throw new error("errore");
-    }
-  })
-  .then((album) => {
-    console.log(album);
-    const titolo = document.querySelector("#player .ms-3 h6");
-    titolo.innerText = album.tracks.data[0].title;
-    const artista = document.querySelector("#player .ms-3 p");
-    artista.innerText = album.tracks.data[0].artist.name;
-    const immagine = document.querySelector("#player .img1 img");
-    immagine.src = album.tracks.data[0].album.cover;
-    const clockStart = document.querySelector("#timeStart");
-    clockStart.innerText = `0:${album.tracks.data[0].duration - 1}`;
-    playPauseButton.addEventListener("click", function () {
-      if (!isPlaying) {
-        if (currentTime === 0) {
-          audio.src = album.tracks.data[0].preview;
+const funzione = function (trackId) {
+  if (trackId) {
+    fetch(`https://striveschool-api.herokuapp.com/api/deezer/track/${trackId}`)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Errore nella richiesta");
         }
-        audio.currentTime = currentTime;
-        audio.play();
-        isPlaying = true;
-      } else {
-        audio.pause();
-        currentTime = audio.currentTime;
-        isPlaying = false;
-      }
-      updatePlayButtonState();
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+      })
+      .then((track) => {
+        console.log(track);
+        let isPlaying = false;
+        const titolo = document.querySelector("#player .ms-3 h6");
+        titolo.innerText = track.title;
+        const artista = document.querySelector("#player .ms-3 p");
+        artista.innerText = track.artist.name;
+        const immagine = document.querySelector("#player .img1 img");
+        immagine.src = track.album.cover;
+        const clockStart = document.querySelector("#timeStart");
+        const duration = track.duration;
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+        const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+        clockStart.innerText = formattedTime;
+        playPauseButton.addEventListener("click", function () {
+          if (!isPlaying) {
+            currentTime = 0;
+            if (currentTime === 0) {
+              audio.src = track.preview;
+            }
+            audio.currentTime = currentTime;
+            audio.play();
+            isPlaying = true;
+          } else {
+            audio.pause();
+            currentTime = audio.currentTime;
+            isPlaying = false;
+          }
+          updatePlayButtonState();
+        });
+        if (!isFirstCall) {
+          updatePlayButtonState2();
+        } else {
+          isFirstCall = false;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    if (artistId) {
+      fetch(
+        `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`
+      )
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Errore nella richiesta");
+          }
+        })
+        .then((artist) => {
+          fetch(artist.tracklist)
+            .then((res) => {
+              if (res.ok) {
+                return res.json();
+              } else {
+                throw new Error(
+                  "Errore nella richiesta della tracklist dell'artista"
+                );
+              }
+            })
+            .then((tracklist) => {
+              console.log(tracklist);
+              const titolo = document.querySelector("#player .ms-3 h6");
+              titolo.innerText = tracklist.data[0].title;
+              const artista = document.querySelector("#player .ms-3 p");
+              artista.innerText = tracklist.data[0].artist.name;
+              const immagine = document.querySelector("#player .img1 img");
+              immagine.src = tracklist.data[0].album.cover;
+              const clockStart = document.querySelector("#timeStart");
+              const duration = tracklist.data[0].duration;
+              const minutes = Math.floor(duration / 60);
+              const seconds = duration % 60;
+              const formattedTime = `${minutes}:${
+                seconds < 10 ? "0" : ""
+              }${seconds}`;
+              clockStart.innerText = formattedTime;
+              playPauseButton.addEventListener("click", function () {
+                if (!isPlaying) {
+                  if (currentTime === 0) {
+                    audio.src = tracklist.data[0].preview;
+                  }
+                  audio.currentTime = currentTime;
+                  audio.play();
+                  isPlaying = true;
+                } else {
+                  audio.pause();
+                  currentTime = audio.currentTime;
+                  isPlaying = false;
+                }
+                updatePlayButtonState();
+              });
+            })
+
+            .catch((err) => {
+              console.log(err);
+            });
+        })
+
+        .catch((err) => {
+          console.log(err);
+        });
+    } else if (albumId) {
+      fetch(
+        `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`
+      )
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Errore nella richiesta");
+          }
+        })
+        .then((album) => {
+          console.log(album);
+          const titolo = document.querySelector("#player .ms-3 h6");
+          titolo.innerText = album.tracks.data[0].title;
+          const artista = document.querySelector("#player .ms-3 p");
+          artista.innerText = album.tracks.data[0].artist.name;
+          const immagine = document.querySelector("#player .img1 img");
+          immagine.src = album.tracks.data[0].album.cover;
+          const clockStart = document.querySelector("#timeStart");
+          const duration = album.tracks.data[0].duration;
+          const minutes = Math.floor(duration / 60);
+          const seconds = duration % 60;
+          const formattedTime = `${minutes}:${
+            seconds < 10 ? "0" : ""
+          }${seconds}`;
+          clockStart.innerText = formattedTime;
+          playPauseButton.addEventListener("click", function () {
+            if (!isPlaying) {
+              if (currentTime === 0) {
+                audio.src = album.tracks.data[0].preview;
+              }
+              audio.currentTime = currentTime;
+              audio.play();
+              isPlaying = true;
+            } else {
+              audio.pause();
+              currentTime = audio.currentTime;
+              isPlaying = false;
+            }
+            updatePlayButtonState();
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+};
+
+funzione();
 
 function updatePlayButtonState() {
   if (isPlaying) {
@@ -61,6 +190,11 @@ function updatePlayButtonState() {
     playPauseButton.classList.remove("bi-pause-circle-fill");
     playPauseButton.classList.add("bi-play-circle-fill");
   }
+}
+
+function updatePlayButtonState2() {
+  playPauseButton.classList.remove("bi-pause-circle-fill");
+  playPauseButton.classList.add("bi-play-circle-fill");
 }
 
 likeIcon.addEventListener("click", function () {

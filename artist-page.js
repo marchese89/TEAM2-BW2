@@ -65,7 +65,9 @@ const generateTrackDetails = function (arrayOfTracks) {
     const newLi = document.createElement("li");
     newLi.classList.add("text-secondary", "my-2");
     newLi.innerHTML = `
-                    <div class="row d-flex align-items-center" style="opacity:1.0" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1.0">
+                    <div class="row d-flex align-items-center" onclick="funzione(${
+                      element.id
+                    })" style="opacity:1.0" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1.0">
                       <div class="col-1 px-0 justify-content-center d-flex">
                       ${i + 1}
                       </div>
