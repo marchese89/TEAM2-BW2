@@ -67,7 +67,7 @@ const funzione = function (trackId) {
         console.log(err);
       });
   } else {
-    if (artistId) {
+    if (typeof artistId !== undefined) {
       fetch(
         `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`
       )

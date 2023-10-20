@@ -1,3 +1,5 @@
+let artistId = 163;
+
 async function search(query) {
   try {
     const res = await fetch(
@@ -15,6 +17,7 @@ async function search(query) {
       }
 
       firtsAlbum(data.data[random]);
+      funzione();
       sixAlbums(data.data, data.data[random].album.id);
       console.log(data);
     } else {
@@ -28,6 +31,8 @@ async function search(query) {
 search("pop");
 
 function firtsAlbum(data) {
+  artistId = data.artist.id;
+  console.log(artistId);
   const img = document.querySelector("#first-album div img");
   img.setAttribute("src", data.album.cover_medium);
   const title = document.getElementById("album-title");
