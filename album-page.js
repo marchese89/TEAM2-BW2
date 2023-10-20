@@ -1,6 +1,6 @@
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get("albumId");
-const artistId = false;
+let artistId;
 
 const generateImage = function (data) {
   let divCover = document.getElementById("cover-img");
