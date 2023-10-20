@@ -197,3 +197,26 @@ _search.addEventListener("keypress", function (event) {
     location.href = "home-page.html";
   }
 });
+
+const _search2 = document.getElementById("search2");
+_search2.addEventListener("keypress", function (event) {
+  const searchQuery = _search2.value;
+
+  if (event.key === "Enter" && searchQuery.length > 0) {
+    sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+    location.href = "home-page.html";
+  }
+});
+
+const sm2 = document.getElementById("search-mobile2");
+sm2.addEventListener("click", function () {
+  const searchQuery = _search2.value;
+  if (searchQuery.length > 0) {
+    sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+    location.href = "home-page.html";
+  }
+});
+
+document.getElementById("search-mobile").addEventListener("click", function () {
+  document.getElementById("search-bar-mobile").classList.remove("d-none");
+});

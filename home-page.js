@@ -19,7 +19,6 @@ async function search(query) {
       firtsAlbum(data.data[random]);
       funzione();
       sixAlbums(data.data, data.data[random].album.id);
-      console.log(data);
     } else {
       throw new Error("Risposta non OK");
     }
@@ -32,7 +31,6 @@ search("pop");
 
 function firtsAlbum(data) {
   artistId = data.artist.id;
-  console.log(artistId);
   const img = document.querySelector("#first-album div img");
   img.setAttribute("src", data.album.cover_medium);
   const title = document.getElementById("album-title");
@@ -90,7 +88,6 @@ function sixAlbums(data, e_random) {
       goToAlbum(data[random].album.id);
     });
   }
-  console.log(used);
   return used;
 }
 
@@ -113,7 +110,6 @@ async function loadAlbums(query) {
     if (res.ok) {
       const data = await res.json();
       mainAlbums(data.data);
-      console.log(data);
     } else {
       throw new Error("Risposta non OK");
     }
@@ -188,7 +184,6 @@ const _search = document.getElementById("search");
 _search.addEventListener("keypress", function (event) {
   const searchQuery = _search.value;
   if (event.key === "Enter" && searchQuery.length > 0) {
-    console.log("INVIO");
     seachOp(searchQuery);
   }
 });
@@ -196,14 +191,12 @@ _search.addEventListener("keypress", function (event) {
 function seachOp(searchQuery) {
   const stAllbum = document.getElementById("first-album");
   stAllbum.classList.add("d-none");
-  console.log(stAllbum);
   const bs = document.getElementById("bs");
   bs.classList.add("d-none");
   const sixAlbums = document.getElementById("six-albums");
   sixAlbums.classList.add("d-none");
   const altro = document.getElementById("altro");
   altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
-  console.log("sono arrivato qui");
   loadAlbums(searchQuery);
 }
 
@@ -230,7 +223,6 @@ if (pages.album != null) {
 }
 
 const search_ = JSON.parse(sessionStorage.getItem("search"));
-console.log("ricerca", search_);
 if (search_ != null) {
   _search.value = search_.s;
   sessionStorage.removeItem("search");
