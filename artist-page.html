@@ -513,28 +513,40 @@
       </div>
     </div>
     <div id="box-player" class="d-flex justify-content-center">
-      <div id="player" class="d-none d-lg-flex align-items-center">
-        <div class="player-left d-flex align-items-center text-white ms-1">
+      <div id="player" class="d-flex align-items-center">
+        <div
+          class="player-left d-flex align-items-center text-white ms-1 flex-grow-1 flex-lg-grow-0"
+        >
           <div class="img1">
             <img src="https://placedog.net/50" alt="" class="ms-2" />
           </div>
-          <div class="ms-3 d-flex flex-column justify-content-center">
+          <div
+            class="ms-3 d-flex flex-column justify-content-center flex-grow-1 flex-lg-grow-0"
+          >
             <h6>Fat Funny Friend</h6>
             <p class="text-secondary hover">Maddie Zaham</p>
           </div>
           <div class="ms-3 shacker">
-            <i class="bi bi-heart" id="like-icon"></i>
+            <i class="bi bi-heart mx-3" id="like-icon"></i>
+            <i
+              class="bi bi-play-fill d-lg-none mx-3"
+              id="play-pause-button-mobile"
+            ></i>
+            <i
+              class="bi bi-music-player text-secondary hover d-lg-none mx-3"
+            ></i>
           </div>
           <div id="like-tooltip"></div>
           <div id="like-tooltip2"></div>
         </div>
-        <div class="player-center">
+        <div class="player-center d-none d-lg-block">
           <div
             class="player-center-top text-white d-flex justify-content-center mt-3"
           >
             <i class="bi bi-shuffle text-secondary hover"></i>
             <i class="fas fa-step-backward text-secondary hover"></i>
             <i class="bi bi-play-circle-fill" id="play-pause-button"></i>
+
             <i class="fas fa-step-forward text-secondary hover"></i>
             <i class="fas fa-undo-alt text-secondary hover"></i>
           </div>
@@ -562,7 +574,9 @@
             </div>
           </div>
         </div>
-        <div class="player-right text-white d-flex justify-content-end">
+        <div
+          class="player-right text-white d-flex justify-content-end d-none d-lg-flex"
+        >
           <i class="bi bi-mic text-secondary hover"></i>
           <i class="bi bi-list-task text-secondary hover"></i>
           <i class="bi bi-music-player text-secondary hover"></i>
