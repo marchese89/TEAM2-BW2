@@ -5,7 +5,15 @@ async function search(query) {
     );
     if (res.ok) {
       const data = await res.json();
-      const random = Math.floor(Math.random() * 25);
+      const randoms = JSON.parse(sessionStorage.getItem("randoms"));
+      let random;
+      if (randoms != null) {
+        random = randoms[0];
+      } else {
+        random = Math.floor(Math.random() * 25);
+        sessionStorage.setItem("randoms", JSON.stringify([random]));
+      }
+
       firtsAlbum(data.data[random]);
       sixAlbums(data.data, data.data[random].album.id);
       console.log(data);
@@ -37,14 +45,22 @@ function firtsAlbum(data) {
 function sixAlbums(data, e_random) {
   const used = [];
   used.push(e_random);
+  const randoms = JSON.parse(sessionStorage.getItem("randoms"));
   for (let i = 1; i <= 6; i++) {
     const elem = document.getElementById(`album${i}`);
     const imgAlbum = elem.querySelector("img");
     imgAlbum.style.cursor = "pointer";
 
-    let random = Math.floor(Math.random() * 25);
-    while (used.includes(data[random].album.id)) {
+    let random;
+
+    if (randoms[i] == undefined) {
       random = Math.floor(Math.random() * 25);
+      while (used.includes(data[random].album.id)) {
+        random = Math.floor(Math.random() * 25);
+      }
+      randoms[i] = random;
+    } else {
+      random = randoms[i];
     }
     imgAlbum.addEventListener("click", function () {
       goToAlbum(data[random].album.id);
@@ -55,13 +71,11 @@ function sixAlbums(data, e_random) {
     const search = elem.querySelector("p");
     search.innerText = data[random].album.title;
   }
+  sessionStorage.setItem("randoms", JSON.stringify(randoms));
   for (let i = 1; i <= 6; i++) {
     const elem = document.getElementById(`album-mobile-${i}`);
-    let random = Math.floor(Math.random() * 25);
-    while (used.includes(data[random].album.id)) {
-      random = Math.floor(Math.random() * 25);
-    }
-    used.push(data[random].album.id);
+    let random = randoms[i];
+    // used.push(data[random].album.id);
     const img = elem.querySelector("div img");
     img.setAttribute("src", data[random].album.cover);
     const search = elem.querySelector("p");
