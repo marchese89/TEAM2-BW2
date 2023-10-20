@@ -159,3 +159,17 @@ const getTrackDetails = function () {
 };
 
 getTrackDetails();
+
+const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
+frecciaDestra.style.cursor = "not-allowed";
+
+const prevPages = JSON.parse(sessionStorage.getItem("pages"));
+prevPages.artist = "artist-page.html?artistId=" + artistId;
+sessionStorage.setItem("pages", JSON.stringify(prevPages));
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.addEventListener("click", function () {
+  const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+  const p = prevPage.album;
+  location.href = p;
+});
