@@ -535,6 +535,14 @@ body {
   padding: 0;
 }
 
+i, li {
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .fs-7 {
   font-size: 0.8em;
 }

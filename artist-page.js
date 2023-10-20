@@ -23,7 +23,7 @@ const getSingleArtistDetails = function () {
 
 function generateArtistDetails(artist) {
   const name = document.getElementById("artist-name");
-  name.innerText = artist.name;
+  name.innerText = reduceText(artist.name, 9);
   const backgroundImg = document.getElementById("background-img");
   backgroundImg.style.backgroundImage = `url(${artist.picture_xl})`;
   const ascoltatori = document.getElementById("nb_fan");
@@ -173,3 +173,14 @@ frecciaSinistra.addEventListener("click", function () {
   const p = prevPage.album;
   location.href = p;
 });
+
+function reduceText(testo, lunghezzaMassima) {
+  // Verifica se la lunghezza del testo supera quella massima
+  if (testo.length > lunghezzaMassima) {
+    // Accorcia il testo e aggiunge puntini alla fine
+    return testo.slice(0, lunghezzaMassima) + "...";
+  } else {
+    // Restituisci il testo inalterato se non supera la lunghezza massima
+    return testo;
+  }
+}
