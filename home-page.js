@@ -16,7 +16,6 @@ async function search(query) {
 
       firtsAlbum(data.data[random]);
       sixAlbums(data.data, data.data[random].album.id);
-      console.log(data);
     } else {
       throw new Error("Risposta non OK");
     }
@@ -28,6 +27,7 @@ async function search(query) {
 search("pop");
 
 function firtsAlbum(data) {
+  artistId = data.artist.id;
   const img = document.querySelector("#first-album div img");
   img.setAttribute("src", data.album.cover_medium);
   const title = document.getElementById("album-title");
@@ -85,7 +85,6 @@ function sixAlbums(data, e_random) {
       goToAlbum(data[random].album.id);
     });
   }
-  console.log(used);
   return used;
 }
 
@@ -108,7 +107,6 @@ async function loadAlbums(query) {
     if (res.ok) {
       const data = await res.json();
       mainAlbums(data.data);
-      console.log(data);
     } else {
       throw new Error("Risposta non OK");
     }
@@ -183,20 +181,21 @@ _search.addEventListener("keypress", function (event) {
   const searchQuery = _search.value;
 
   if (event.key === "Enter" && searchQuery.length > 0) {
-    console.log("INVIO");
-    const stAllbum = document.getElementById("first-album");
-    stAllbum.classList.add("d-none");
-    console.log(stAllbum);
-    const bs = document.getElementById("bs");
-    bs.classList.add("d-none");
-    const sixAlbums = document.getElementById("six-albums");
-    sixAlbums.classList.add("d-none");
-    const altro = document.getElementById("altro");
-    altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
-    console.log("sono arrivato qui");
-    loadAlbums(searchQuery);
+    seachOp(searchQuery);
   }
 });
+
+function seachOp(searchQuery) {
+  const stAllbum = document.getElementById("first-album");
+  stAllbum.classList.add("d-none");
+  const bs = document.getElementById("bs");
+  bs.classList.add("d-none");
+  const sixAlbums = document.getElementById("six-albums");
+  sixAlbums.classList.add("d-none");
+  const altro = document.getElementById("altro");
+  altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
+  loadAlbums(searchQuery);
+}
 
 const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
 frecciaSinistra.style.cursor = "not-allowed";
@@ -218,4 +217,11 @@ if (pages.album != null) {
     sessionStorage.setItem("pages", JSON.stringify(pages));
     location.href = forward;
   });
+}
+
+const search_ = JSON.parse(sessionStorage.getItem("search"));
+if (search_ != null) {
+  _search.value = search_.s;
+  sessionStorage.removeItem("search");
+  seachOp(search_.s);
 }
