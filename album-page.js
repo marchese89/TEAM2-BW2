@@ -70,13 +70,13 @@ const renderAlbum = function (data) {
   divDescr.appendChild(albumTitle);
 
   const id = artist.id;
-  console.log(id);
+  console.log("idartist", id);
 
   const divArtist = document.createElement("div");
   divArtist.setAttribute("id", "divArtist");
   divArtist.classList.add("d-flex", "flex-row");
   divArtist.innerHTML = `<img src="${artist.picture_small}" id="artistImg" />
-  <p id="sottoTitolo"><a class="linkArtist text-white" href="artist-page.html?artistId="${id}>${artist.name}</a><span id=dataBrano> &middot ${year} &middot ${data.nb_tracks} brani,</span><span id="duration"> ${totSec} </span> </p>
+  <p id="sottoTitolo"><a class="linkArtist text-white" href="artist-page.html?artistId=${id}">${artist.name}</a><span id=dataBrano> &middot ${year} &middot ${data.nb_tracks} brani,</span><span id="duration"> ${totSec} </span> </p>
   `;
   const divHidden = document.createElement("div");
   divHidden.setAttribute("id", "divHidden");
