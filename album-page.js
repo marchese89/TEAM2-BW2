@@ -310,3 +310,33 @@ const start = function () {
   // console.log del risultato
   console.log(mostRecurrentHex);
 };
+
+const pages = JSON.parse(sessionStorage.getItem("pages"));
+console.log("pagine", pages);
+pages.album = "album-page.html?albumId=" + albumId;
+sessionStorage.setItem("pages", JSON.stringify(pages));
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.addEventListener("click", function () {
+  const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+  const p = prevPage.home;
+  location.href = p;
+});
+
+const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
+frecciaDestra.style.cursor = "not-allowed";
+
+if (pages.artist != null) {
+  frecciaDestra.style.cursor = "pointer";
+  frecciaDestra.addEventListener("click", function () {
+    const pages = JSON.parse(sessionStorage.getItem("pages"));
+    const forward = pages.artist;
+    sessionStorage.setItem("pages", JSON.stringify(pages));
+    location.href = forward;
+  });
+}
+
+const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+if (prevPage.artist != null) {
+  frecciaDestra.style.cursor = "pointer";
+}

@@ -30,7 +30,7 @@ function firtsAlbum(data) {
   slogan.innerText = data.artist.name;
   const imgFirstAlbum = document.getElementById("first-album-img");
   imgFirstAlbum.addEventListener("click", function () {
-    location.href = `album-page.html?albumId=${data.album.id}`;
+    goToAlbum(data.album.id);
   });
 }
 
@@ -47,7 +47,7 @@ function sixAlbums(data, e_random) {
       random = Math.floor(Math.random() * 25);
     }
     imgAlbum.addEventListener("click", function () {
-      location.href = `album-page.html?albumId=${data[random].album.id}`;
+      goToAlbum(data[random].album.id);
     });
     used.push(data[random].album.id);
     const img = elem.querySelector("div img");
@@ -131,6 +131,9 @@ function mainAlbums(data) {
 
 function goToAlbum(id) {
   location.href = `album-page.html?albumId=${id}`;
+  const pages = JSON.parse(sessionStorage.getItem("pages"));
+  pages.home = "home-page.html";
+  sessionStorage.setItem("pages", JSON.stringify(pages));
 }
 
 const _search = document.getElementById("search");
@@ -154,3 +157,26 @@ _search.addEventListener("keypress", function (event) {
     loadAlbums(searchQuery);
   }
 });
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.style.cursor = "not-allowed";
+const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
+frecciaDestra.style.cursor = "not-allowed";
+
+//riferimento alle pagine precedenti
+const pages = JSON.parse(sessionStorage.getItem("pages"));
+
+if (pages.album != null) {
+  frecciaDestra.style.cursor = "pointer";
+  frecciaDestra.addEventListener("click", function () {
+    const pages = JSON.parse(sessionStorage.getItem("pages"));
+    const forward = pages.album;
+    pages.home = "home-page.html";
+    sessionStorage.setItem("pages", JSON.stringify(pages));
+    location.href = forward;
+  });
+}
+
+if (pages == null) {
+  sessionStorage.setItem("pages", JSON.stringify({}));
+}
