@@ -1,6 +1,6 @@
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get("albumId");
-const artistId = false;
+let artistId;
 
 const generateImage = function (data) {
   let divCover = document.getElementById("cover-img");
@@ -407,13 +407,25 @@ leftArrMobile.addEventListener("click", function () {
   backPage();
 });
 
-//gestione della ricerca
-const _search = document.getElementById("search");
-_search.addEventListener("keypress", function (event) {
-  const searchQuery = _search.value;
+document.getElementById("search-mobile").addEventListener("click", function () {
+  document.getElementById("search-bar-mobile").classList.remove("d-none");
+  const _search2 = document.getElementById("search2");
+  _search2.addEventListener("keypress", function (event) {
+    const searchQuery = _search2.value;
 
-  if (event.key === "Enter" && searchQuery.length > 0) {
-    sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
-    location.href = "home-page.html";
-  }
+    if (event.key === "Enter" && searchQuery.length > 0) {
+      sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+      location.href = "home-page.html";
+    }
+  });
+
+  const sm2 = document.getElementById("search-mobile2");
+  sm2.style.cursor = "pointer";
+  sm2.addEventListener("click", function () {
+    const searchQuery = _search2.value;
+    if (searchQuery.length > 0) {
+      sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+      location.href = "home-page.html";
+    }
+  });
 });
