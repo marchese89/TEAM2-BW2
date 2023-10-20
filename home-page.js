@@ -179,24 +179,28 @@ function goToAlbum(id) {
 }
 
 const _search = document.getElementById("search");
+
 _search.addEventListener("keypress", function (event) {
   const searchQuery = _search.value;
-
   if (event.key === "Enter" && searchQuery.length > 0) {
     console.log("INVIO");
-    const stAllbum = document.getElementById("first-album");
-    stAllbum.classList.add("d-none");
-    console.log(stAllbum);
-    const bs = document.getElementById("bs");
-    bs.classList.add("d-none");
-    const sixAlbums = document.getElementById("six-albums");
-    sixAlbums.classList.add("d-none");
-    const altro = document.getElementById("altro");
-    altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
-    console.log("sono arrivato qui");
-    loadAlbums(searchQuery);
+    seachOp(searchQuery);
   }
 });
+
+function seachOp(searchQuery) {
+  const stAllbum = document.getElementById("first-album");
+  stAllbum.classList.add("d-none");
+  console.log(stAllbum);
+  const bs = document.getElementById("bs");
+  bs.classList.add("d-none");
+  const sixAlbums = document.getElementById("six-albums");
+  sixAlbums.classList.add("d-none");
+  const altro = document.getElementById("altro");
+  altro.innerText = `Risultati della Ricerca di "${searchQuery}"...`;
+  console.log("sono arrivato qui");
+  loadAlbums(searchQuery);
+}
 
 const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
 frecciaSinistra.style.cursor = "not-allowed";
@@ -218,4 +222,12 @@ if (pages.album != null) {
     sessionStorage.setItem("pages", JSON.stringify(pages));
     location.href = forward;
   });
+}
+
+const search_ = JSON.parse(sessionStorage.getItem("search"));
+console.log("ricerca", search_);
+if (search_ != null) {
+  _search.value = search_.s;
+  sessionStorage.removeItem("search");
+  seachOp(search_.s);
 }

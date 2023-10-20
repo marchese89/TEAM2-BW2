@@ -184,3 +184,14 @@ function reduceText(testo, lunghezzaMassima) {
     return testo;
   }
 }
+
+//gestione della ricerca
+const _search = document.getElementById("search");
+_search.addEventListener("keypress", function (event) {
+  const searchQuery = _search.value;
+
+  if (event.key === "Enter" && searchQuery.length > 0) {
+    sessionStorage.setItem("search", JSON.stringify({ s: searchQuery }));
+    location.href = "home-page.html";
+  }
+});
