@@ -1,54 +1,27 @@
 const addressBarContent = new URLSearchParams(location.search);
 const albumId = addressBarContent.get("albumId");
 
-// const renderBg = function (img) {
-//   fetch(img)
-//     .then((response) => response.blob())
-//     .then((blob) => {
-//       const reader = new FileReader();
+const generateImage = function (data) {
+  let divCover = document.getElementById("cover-img");
+  let imageSrc1 = data;
+  console.log(data);
+  let imageSrc = imageSrc1.cover_medium;
+  console.log(imageSrc1);
+  // const cover = document.createElement("img");
+  // cover.src = data.cover_medium;
+  // cover.setAttribute("crossorigin", "anonymous");
+  // cover.setAttribute("onload", "start()");
+  // cover.setAttribute("id", "img");
 
-//       reader.onload = function () {
-//         localStorage.setItem("downloadImage", reader.result);
-//         const img = new Image();
-//         img.src = reader.result;
-//         img.onload = function () {
-//           const canvas = document.createElement("canvas");
-//           const ctx = canvas.getContext("2d");
+  divCover.innerHTML = `
+    <img
+      src=${imageSrc}
+      id="img"
+      crossorigin="anonymous"
+      onload="start()"
+    />`;
+};
 
-//           canvas.width = img.width;
-//           canvas.height = img.height;
-//           ctx.drawImage(img, 0, 0, img.width, img.height);
-
-//           const imageData = ctx.getImageData(0, 0, img.width, img.height).data;
-//           const numPixels = img.width * img.height;
-
-//           let totalRed = 0;
-//           let totalGreen = 0;
-//           let totalBlue = 0;
-
-//           for (let i = 0; i < numPixels; i++) {
-//             totalRed += imageData[i * 4]; // R channel
-//             totalGreen += imageData[i * 4 + 1]; // G channel
-//             totalBlue += imageData[i * 4 + 2]; // B channel
-//           }
-
-//           const avgRed = Math.round(totalRed / numPixels);
-//           const avgGreen = Math.round(totalGreen / numPixels);
-//           const avgBlue = Math.round(totalBlue / numPixels);
-
-//           const backgroundColor = `rgb(${avgRed}, ${avgGreen}, ${avgBlue})`;
-
-//           // Imposta il colore medio come sfondo del div
-//           const divCover = document.getElementById("div-Album");
-//           divCover.style.backgroundColor = backgroundColor;
-//         };
-//       };
-//       reader.readAsDataURL(blob);
-//     })
-//     .catch((error) => {
-//       console.error("errore");
-//     });
-// };
 const durata = function (secondi) {
   const ore = Math.floor(secondi / 3600);
 
@@ -76,9 +49,7 @@ const trackDurata = function (secondi) {
 };
 
 const renderAlbum = function (data) {
-  const divCover = document.getElementById("cover-img");
-  const cover = document.createElement("img");
-  cover.src = data.cover_medium;
+  generateImage(data);
   const artist = data.artist;
   //CALCOLO LA DATA
   const release = data.release_date;
@@ -86,7 +57,7 @@ const renderAlbum = function (data) {
   //CALCOLO MINUTI E SECONDI
   const totSec = durata(data.duration);
 
-  divCover.appendChild(cover);
+  // divCover.appendChild(cover);
 
   const divDescr = document.getElementById("album-description");
   const type = document.createElement("p");
@@ -99,13 +70,13 @@ const renderAlbum = function (data) {
   divDescr.appendChild(albumTitle);
 
   const id = artist.id;
-  console.log(id);
+  console.log("idartist", id);
 
   const divArtist = document.createElement("div");
   divArtist.setAttribute("id", "divArtist");
   divArtist.classList.add("d-flex", "flex-row");
   divArtist.innerHTML = `<img src="${artist.picture_small}" id="artistImg" />
-  <p id="sottoTitolo"><a class="linkArtist text-white" href="artist-page.html?artistId="${id}>${artist.name}</a><span id=dataBrano> &middot ${year} &middot ${data.nb_tracks} brani,</span><span id="duration"> ${totSec} </span> </p>
+  <p id="sottoTitolo"><a class="linkArtist text-white" href="artist-page.html?artistId=${id}">${artist.name}</a><span id=dataBrano> &middot ${year} &middot ${data.nb_tracks} brani,</span><span id="duration"> ${totSec} </span> </p>
   `;
   const divHidden = document.createElement("div");
   divHidden.setAttribute("id", "divHidden");
@@ -118,7 +89,20 @@ const renderAlbum = function (data) {
   divDescr.appendChild(divHidden);
   //   renderBg(data.cover);
 };
+function aggiungiPuntini(numero) {
+  // Converte il numero in una stringa
+  var numeroStringa = numero.toString();
 
+  // Dividi la stringa in gruppi di tre cifre da destra a sinistra
+  var gruppi = [];
+  while (numeroStringa.length > 0) {
+    gruppi.unshift(numeroStringa.slice(-3));
+    numeroStringa = numeroStringa.slice(0, -3);
+  }
+
+  // Unisci i gruppi con i puntini
+  return gruppi.join(".");
+}
 const renderList = function (data) {
   const track = data.tracks.data;
   console.log(track);
@@ -129,6 +113,8 @@ const renderList = function (data) {
     const divRow = document.createElement("div");
     divRow.classList.add("row", "align-items-center");
     divRow.setAttribute("id", "rigaTrack");
+    const rankPuntato = element.rank;
+
     divRow.innerHTML = `<div class="col-auto text-start me-2 "><span>${
       index + 1
     }<i class="bi bi-play-fill text-white hidden"></i></span>
@@ -143,7 +129,9 @@ const renderList = function (data) {
                           }">${element.artist.name}</a></div>
                          </div>
                        </div>
-                 <div class="col-2 me-auto text-end ripr">${element.rank}</div>
+                 <div class="col-2 me-auto text-end ripr">${aggiungiPuntini(
+                   rankPuntato
+                 )}</div>
                  <div class="col-auto heart"><i class="bi bi-heart text-white hidden"></i></div>
                  <div class="col-auto" id="secHidden">${totSec}</div>
                  <div class="col-auto trep"><i class="bi bi-three-dots text-white hidden"></i></div>
@@ -184,29 +172,6 @@ const renderList = function (data) {
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
 
-// const trovaAnno = function (id) {
-//   fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id, {})
-//     .then((res) => {
-//       console.log("Response ottenuta dalla GET", res);
-//       if (res.ok) {
-//         // la chiamata è terminata correttamente con un 200
-//         console.log("ok");
-//         return res.json();
-//       } else {
-//         throw new Error("Errore nel contattare il server");
-//       }
-//     })
-//     .then((id) => {
-//       console.log("ForId", id);
-//       const release = id.release_date;
-//       const year = release.slice(0, 4);
-//       console.log(year);
-//       return year;
-//     })
-//     .catch((err) => {
-//       console.log("Si è verificato un errore:", err);
-//     });
-// };
 const renderTitle = function (data) {
   const y = data.data;
   console.log("y", y);
@@ -230,74 +195,6 @@ const renderTitle = function (data) {
   divRowTitolo.appendChild(a);
 };
 
-const renderCard = function (data) {
-  const x = data.data;
-  console.log("x", x);
-
-  //RENDERIZZA CARD CON TITOLO E ANNO(?)
-
-  const divRow = document.getElementById("albumCorrelati");
-  divRow.innerHTML = "";
-  const screenWidth = window.innerWidth;
-
-  const numCard = Math.floor(screenWidth / 350);
-  for (let i = 0; i < numCard; i++) {
-    const divCol = document.createElement("div");
-    const titolo = x[i].album.title;
-    const img = x[i].album.cover;
-    const id = x[i].album.id;
-    console.log("ciao", id);
-
-    // const year = trovaAnno(id);
-    // console.log(year);
-
-    divCol.classList.add("col");
-    divCol.innerHTML = `<div class="card">
-                           <img src="${img}" class="card-img-top rounded" alt="...">
-                       <div class="card-body  px-0" my-1>
-                          <h5 class="card-title text-truncate text-white">${titolo}</h5>
-                          <p class="card-text text-white">Anno?</p>
-                       </div>
-                    </div>`;
-    divRow.appendChild(divCol);
-
-    divCol.addEventListener("click", function () {
-      location.href = `album-page.html?albumId=${id}`;
-    });
-  }
-};
-
-const cardCreator = function (data) {
-  const name = data.artist.name;
-  console.log("provaprova", name);
-
-  fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + name,
-    {}
-  )
-    .then((res) => {
-      console.log("Response ottenuta dalla GET", res);
-      if (res.ok) {
-        // la chiamata è terminata correttamente con un 200
-        console.log("ok");
-        return res.json();
-      } else {
-        throw new Error("Errore nel contattare il server");
-      }
-    })
-    .then((data) => {
-      console.log("Album2", data);
-      renderCard(data);
-      window.addEventListener("resize", function () {
-        renderCard(data);
-      });
-      renderTitle(data);
-    })
-    .catch((err) => {
-      console.log("Si è verificato un errore:", err);
-    });
-};
-
 fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId, {})
   .then((res) => {
     console.log("Response ottenuta dalla GET", res);
@@ -313,7 +210,6 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + albumId, {})
     console.log("Album", data);
     renderAlbum(data);
     renderList(data);
-    cardCreator(data);
   })
   .catch((err) => {
     console.log("Si è verificato un errore:", err);
@@ -324,3 +220,186 @@ var previousPage = localStorage.getItem("previousPage");
 localStorage.setItem("previousPage", window.location.href);
 console.log("Pagina di provenienza: " + referrer);
 console.log("Pagina visitata precedentemente: " + previousPage);
+
+// crea un canvas con l'immagine e ne ritorno il context 2d
+const draw = function (img) {
+  let canvas = document.createElement("canvas");
+  let c = canvas.getContext("2d");
+  c.width = canvas.width = img.clientWidth;
+  c.height = canvas.height = img.clientHeight;
+  c.clearRect(0, 0, c.width, c.height);
+  c.drawImage(img, 0, 0, img.clientWidth, img.clientHeight);
+  return c;
+};
+
+// scompone pixel per pixel e ritorna un oggetto con una mappa della loro frequenza nell'immagine
+const getColors = function (c) {
+  let col,
+    colors = {};
+  let pixels, r, g, b, a;
+  r = g = b = a = 0;
+  pixels = c.getImageData(0, 0, c.width, c.height);
+  for (let i = 0, data = pixels.data; i < data.length; i += 4) {
+    r = data[i];
+    g = data[i + 1];
+    b = data[i + 2];
+    a = data[i + 3];
+    if (a < 255 / 2) continue;
+    col = rgbToHex(r, g, b);
+    if (!colors[col]) colors[col] = 0;
+    colors[col]++;
+  }
+  return colors;
+};
+
+// trova il colore più ricorrente data una mappa di frequenza dei colori
+const findMostRecurrentColor = function (colorMap) {
+  let highestValue = 0;
+  let mostRecurrent = null;
+  for (const hexColor in colorMap) {
+    if (colorMap[hexColor] > highestValue) {
+      mostRecurrent = hexColor;
+      highestValue = colorMap[hexColor];
+    }
+  }
+  return mostRecurrent;
+};
+
+// converte un valore in rgb a un valore esadecimale
+const rgbToHex = function (r, g, b) {
+  if (r > 255 || g > 255 || b > 255) {
+    throw "Invalid color component";
+  } else {
+    return ((r << 16) | (g << 8) | b).toString(16);
+  }
+};
+
+// inserisce degli '0' se necessario davanti al colore in esadecimale per renderlo di 6 caratteri
+const pad = function (hex) {
+  return ("000000" + hex).slice(-6);
+};
+function adjustBrightness(hexColor, factor) {
+  // Rimuovi il carattere '#' dall'esadecimale
+  hexColor = hexColor.replace("#", "");
+
+  // Estrai i valori delle componenti RGB
+  const r = parseInt(hexColor.slice(0, 2), 16);
+  const g = parseInt(hexColor.slice(2, 4), 16);
+  const b = parseInt(hexColor.slice(4, 6), 16);
+
+  // Calcola la luminosità attuale
+  const luminosity = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Calcola i nuovi valori delle componenti RGB
+  const newR = Math.min(255, r + factor);
+  const newG = Math.min(255, g + factor);
+  const newB = Math.min(255, b + factor);
+
+  // Converte i nuovi valori in una stringa esadecimale
+  const newHexColor = `#${newR.toString(16)}${newG.toString(16)}${newB.toString(
+    16
+  )}`;
+
+  return newHexColor;
+}
+
+function isColorNearBlack(hexColor, threshold = 0.12) {
+  // Rimuovi il carattere '#' dall'esadecimale
+  hexColor = hexColor.replace("#", "");
+
+  // Estrai i valori delle componenti RGB
+  const r = parseInt(hexColor.slice(0, 2), 16) / 255;
+  const g = parseInt(hexColor.slice(2, 4), 16) / 255;
+  const b = parseInt(hexColor.slice(4, 6), 16) / 255;
+
+  // Calcola la luminosità
+  const luminosity = 0.299 * r + 0.587 * g + 0.114 * b;
+  console.log(luminosity);
+
+  // Confronta con la soglia
+  return luminosity < threshold;
+}
+
+const setBackground = function (color) {
+  const div1 = document.getElementById("provacolore");
+  console.log(color);
+  hexColor = "#" + color;
+  console.log(hexColor);
+  isNear = isColorNearBlack(hexColor);
+  if (isNear) {
+    newColor = adjustBrightness(hexColor, 60);
+    console.log(newColor);
+    div1.style.background = `linear-gradient(0deg, rgba(32, 32, 32, 1) -20%, ${newColor} 120%)`;
+    const div2 = document.getElementById("songList");
+    div2.style.background = `linear-gradient(180deg, ${newColor} -60%,rgb(32, 32, 32) 17% )`;
+  } else {
+    div1.style.background = `linear-gradient(0deg, rgba(32, 32, 32, 1) -20%, #${color} 120%)`;
+    const div2 = document.getElementById("songList");
+    div2.style.background = `linear-gradient(
+    180deg,
+    #${color} -60%,
+    rgb(32, 32, 32) 17%
+  )`;
+  }
+};
+
+const start = function () {
+  // prendo il riferimento all'immagine del dom
+  let imgReference = document.querySelector("#img");
+
+  // creo il context 2d dell'immagine selezionata
+  let context = draw(imgReference);
+
+  // creo la mappa dei colori più ricorrenti nell'immagine
+  let allColors = getColors(context);
+
+  // trovo colore più ricorrente in esadecimale
+  let mostRecurrent = findMostRecurrentColor(allColors);
+
+  // se necessario, aggiunge degli '0' per rendere il risultato un valido colore esadecimale
+  let mostRecurrentHex = pad(mostRecurrent);
+  setBackground(mostRecurrentHex);
+  // console.log del risultato
+  console.log(mostRecurrentHex);
+};
+
+const pages = JSON.parse(sessionStorage.getItem("pages"));
+console.log("pagine", pages);
+pages.album = "album-page.html?albumId=" + albumId;
+sessionStorage.setItem("pages", JSON.stringify(pages));
+
+function backPage() {
+  const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+  const p = prevPage.home;
+  location.href = p;
+}
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.addEventListener("click", function () {
+  backPage();
+});
+
+const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
+frecciaDestra.style.cursor = "not-allowed";
+
+if (pages.artist != null) {
+  frecciaDestra.style.cursor = "pointer";
+  frecciaDestra.addEventListener("click", function () {
+    const pages = JSON.parse(sessionStorage.getItem("pages"));
+    const forward = pages.artist;
+    sessionStorage.setItem("pages", JSON.stringify(pages));
+    location.href = forward;
+  });
+}
+
+const prevPage = JSON.parse(sessionStorage.getItem("pages"));
+if (prevPage.artist != null) {
+  frecciaDestra.style.cursor = "pointer";
+}
+
+//animiamo la freccia dietro
+const leftArrMobile = document.getElementById("arrowBack");
+leftArrMobile.addEventListener("click", function () {
+  console.log("entro nella freccia sinistra");
+  backPage();
+});
