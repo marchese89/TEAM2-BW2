@@ -278,17 +278,69 @@ const rgbToHex = function (r, g, b) {
 const pad = function (hex) {
   return ("000000" + hex).slice(-6);
 };
+function adjustBrightness(hexColor, factor) {
+  // Rimuovi il carattere '#' dall'esadecimale
+  hexColor = hexColor.replace("#", "");
+
+  // Estrai i valori delle componenti RGB
+  const r = parseInt(hexColor.slice(0, 2), 16);
+  const g = parseInt(hexColor.slice(2, 4), 16);
+  const b = parseInt(hexColor.slice(4, 6), 16);
+
+  // Calcola la luminosità attuale
+  const luminosity = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Calcola i nuovi valori delle componenti RGB
+  const newR = Math.min(255, r + factor);
+  const newG = Math.min(255, g + factor);
+  const newB = Math.min(255, b + factor);
+
+  // Converte i nuovi valori in una stringa esadecimale
+  const newHexColor = `#${newR.toString(16)}${newG.toString(16)}${newB.toString(
+    16
+  )}`;
+
+  return newHexColor;
+}
+
+function isColorNearBlack(hexColor, threshold = 0.12) {
+  // Rimuovi il carattere '#' dall'esadecimale
+  hexColor = hexColor.replace("#", "");
+
+  // Estrai i valori delle componenti RGB
+  const r = parseInt(hexColor.slice(0, 2), 16) / 255;
+  const g = parseInt(hexColor.slice(2, 4), 16) / 255;
+  const b = parseInt(hexColor.slice(4, 6), 16) / 255;
+
+  // Calcola la luminosità
+  const luminosity = 0.299 * r + 0.587 * g + 0.114 * b;
+  console.log(luminosity);
+
+  // Confronta con la soglia
+  return luminosity < threshold;
+}
 
 const setBackground = function (color) {
   const div1 = document.getElementById("provacolore");
   console.log(color);
-  div1.style.background = `linear-gradient(0deg, rgba(32, 32, 32, 1) -20%, #${color} 120%)`;
-  const div2 = document.getElementById("songList");
-  div2.style.background = `linear-gradient(
+  hexColor = "#" + color;
+  console.log(hexColor);
+  isNear = isColorNearBlack(hexColor);
+  if (isNear) {
+    newColor = adjustBrightness(hexColor, 60);
+    console.log(newColor);
+    div1.style.background = `linear-gradient(0deg, rgba(32, 32, 32, 1) -20%, ${newColor} 120%)`;
+    const div2 = document.getElementById("songList");
+    div2.style.background = `linear-gradient(180deg, ${newColor} -60%,rgb(32, 32, 32) 17% )`;
+  } else {
+    div1.style.background = `linear-gradient(0deg, rgba(32, 32, 32, 1) -20%, #${color} 120%)`;
+    const div2 = document.getElementById("songList");
+    div2.style.background = `linear-gradient(
     180deg,
     #${color} -60%,
     rgb(32, 32, 32) 17%
   )`;
+  }
 };
 
 const start = function () {
@@ -306,7 +358,7 @@ const start = function () {
 
   // se necessario, aggiunge degli '0' per rendere il risultato un valido colore esadecimale
   let mostRecurrentHex = pad(mostRecurrent);
-  setBackground(mostRecurrent);
+  setBackground(mostRecurrentHex);
   // console.log del risultato
   console.log(mostRecurrentHex);
 };
