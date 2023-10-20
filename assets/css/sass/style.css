@@ -525,10 +525,6 @@ i, li {
   cursor: pointer;
 }
 
-i:hover {
-  font-size: 2em;
-}
-
 li:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -552,6 +548,7 @@ li:hover {
 @media (min-width: 992px) {
   .play-button {
     color: #1ED760 !important;
+    font-size: 50px;
   }
 }
 #shuffle-custom {
