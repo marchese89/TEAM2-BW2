@@ -74,12 +74,16 @@ function sixAlbums(data, e_random) {
   sessionStorage.setItem("randoms", JSON.stringify(randoms));
   for (let i = 1; i <= 6; i++) {
     const elem = document.getElementById(`album-mobile-${i}`);
+    elem.style.cursor = "pointer";
     let random = randoms[i];
     // used.push(data[random].album.id);
     const img = elem.querySelector("div img");
     img.setAttribute("src", data[random].album.cover);
     const search = elem.querySelector("p");
     search.innerText = reduceText(data[random].album.title, 13);
+    elem.addEventListener("click", function () {
+      goToAlbum(data[random].album.id);
+    });
   }
   console.log(used);
   return used;
@@ -117,15 +121,10 @@ loadAlbums("rock");
 
 function mainAlbums(data) {
   const mainAlbums = document.getElementById("main-albums");
+  const mainAlbumsMobile = document.getElementById("big-albums-mobile");
   mainAlbums.innerHTML = "";
-  data.forEach((d, i) => {
-    if (i == 0 || i == 1) {
-      const elem = document.getElementById(`big-album-${i}`);
-      const img = elem.querySelector("img");
-      img.setAttribute("src", d.album.cover);
-      const title = elem.querySelector("h6");
-      title.innerText = d.album.title;
-    }
+  mainAlbumsMobile.innerHTML = "";
+  data.forEach((d) => {
     const newCol = document.createElement("div");
     newCol.classList.add("col", "out-banner");
     newCol.innerHTML = `
@@ -140,6 +139,35 @@ function mainAlbums(data) {
                 </div>
     `;
     mainAlbums.appendChild(newCol);
+
+    //per il mobile
+    const newColMobile = document.createElement("div");
+    newColMobile.classList.add("big-banner", "d-flex", "flex-column", "mb-3");
+    newColMobile.innerHTML = `
+    <div class="d-flex">
+                    <div class="d-flex align-items-center">
+                      <img src="${d.album.cover}" alt="" onclick="goToAlbum('${d.album.id}')"/>
+                    </div>
+                    <div
+                      class="d-flex flex-grow-1 justify-content-start ms-3 align-items-center"
+                    >
+                      <h6 class="mt-3">${d.album.title}</h6>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div
+                    class="out-banner-bottom m-2 d-flex justify-content-between"
+                  >
+                    <div>
+                      <i class="bi bi-heart-fill fs-4"></i>
+                      <i class="bi bi-three-dots-vertical fs-4"></i>
+                    </div>
+                    <div class="play-mobile">
+                      <i class="bi bi-play-fill fs-4"></i>
+                    </div>
+                  </div>
+    `;
+    mainAlbumsMobile.appendChild(newColMobile);
   });
 }
 
@@ -155,8 +183,6 @@ _search.addEventListener("keypress", function (event) {
   const searchQuery = _search.value;
 
   if (event.key === "Enter" && searchQuery.length > 0) {
-    // event.preventDefault();
-    // document.getElementById("myBtn").click();
     console.log("INVIO");
     const stAllbum = document.getElementById("first-album");
     stAllbum.classList.add("d-none");
@@ -179,6 +205,9 @@ frecciaDestra.style.cursor = "not-allowed";
 
 //riferimento alle pagine precedenti
 const pages = JSON.parse(sessionStorage.getItem("pages"));
+if (pages == null) {
+  sessionStorage.setItem("pages", JSON.stringify({}));
+}
 
 if (pages.album != null) {
   frecciaDestra.style.cursor = "pointer";
@@ -189,8 +218,4 @@ if (pages.album != null) {
     sessionStorage.setItem("pages", JSON.stringify(pages));
     location.href = forward;
   });
-}
-
-if (pages == null) {
-  sessionStorage.setItem("pages", JSON.stringify({}));
 }

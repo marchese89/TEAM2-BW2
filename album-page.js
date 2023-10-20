@@ -316,11 +316,15 @@ console.log("pagine", pages);
 pages.album = "album-page.html?albumId=" + albumId;
 sessionStorage.setItem("pages", JSON.stringify(pages));
 
-const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
-frecciaSinistra.addEventListener("click", function () {
+function backPage() {
   const prevPage = JSON.parse(sessionStorage.getItem("pages"));
   const p = prevPage.home;
   location.href = p;
+}
+
+const frecciaSinistra = document.querySelector(".bi.bi-chevron-left");
+frecciaSinistra.addEventListener("click", function () {
+  backPage();
 });
 
 const frecciaDestra = document.querySelector(".bi.bi-chevron-right");
@@ -340,3 +344,10 @@ const prevPage = JSON.parse(sessionStorage.getItem("pages"));
 if (prevPage.artist != null) {
   frecciaDestra.style.cursor = "pointer";
 }
+
+//animiamo la freccia dietro
+const leftArrMobile = document.getElementById("arrowBack");
+leftArrMobile.addEventListener("click", function () {
+  console.log("entro nella freccia sinistra");
+  backPage();
+});
